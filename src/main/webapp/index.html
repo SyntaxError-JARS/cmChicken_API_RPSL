@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <H1>Welcome to CM Chicken</H1>
+
+        <H2>WE DON"T COPY, WE ONLY CREATE</H2>
+        <button onclick="mappedUpdate()">Update Status</button>
+
+        <p>All the above tasks are acheieveable by sending HTTP Requests to the endpoints provided in the following postman executables.</p>
+
+        <br />
+
+        <button onclick="asyncAllPokemon()">Click here to view all Pokemon</button>
+        <div id="findAllPokemon"></div>
+
+            <script>
+            function updateUser1() {
+                if (document.getElementById("user1").checked === true) {
+                    document.getElementById("userValue1").innerHTML = "User Story 1 Completed: Trainer Registration";
+                } else {
+                    document.getElementById("userValue1").innerHTML =
+                        "As a new trainer, I should be able to register myself on the system, so that I can begin using the poke project application.";
+                }
+            }
+            function updateUser2() {
+                if (document.getElementById("user2").checked === true) {
+                    document.getElementById("userValue2").innerHTML = "User Story 2 Completed: Trainer Login";
+                } else {
+                    document.getElementById("userValue2").innerHTML =
+                        "As a trainer, I should be able to log in once I've registered so that I can access the information in the database about all the known pokemon.";
+                }
+            }
+
+            function loopedUpdate() {
+                for (let i = 1; i <= 7; i++) {
+                    if (document.getElementById("user" + i).checked === true) {
+                        document.getElementById("userValue" + i).innerHTML = "User Story " + i + " has been completed";
+                    }
+                }
+            }
+
+            function mappedUpdate() {
+                let oldInfoArray = [1, 2, 3, 4, 5, 6, 7];
+
+                oldInfoArray.map((e, i) => {
+                    if (document.getElementById("user" + e).checked === true) {
+                        document.getElementById("userValue" + e).innerHTML = "User Story " + e + " has been completed";
+                    } else {
+                        document.getElementById("userValue" + e).innerHTML = oldInfoArray[i];
+                    }
+                });
+            }
+
+            function findAllPokemon() {
+                let request = new XMLHttpRequest(); // This is from AJAX which stands for Asynchronous JS & XML
+
+                // ReadyState 1, 2 & 3 are send and establishing the connection
+                request.open("GET", "http://localhost:8080/poke_project/pokemon", true);
+
+                // Know the ready statechanges for ajax
+                request.onreadystatechange = function () {
+                    if (this.readyState === 4 && this.status === 200) {
+                        // ReadyState 4 - request has been sent and response is finished
+                        let pokemons = JSON.parse(this.responseText);
+                        console.log(pokemons);
+                        ourLoopedHTML(pokemons);
+                    }
+                };
+                request.send();
+            }
+
+            function fetchAllPokemon() {
+                // JS Promises - sends a request to an event loop, returning a Promise
+
+                fetch("http://localhost:8080/poke_project/pokemon") // add anotherr argument in feth with an object for the method ie {method: "POST"}
+                    .then((response) => response.json())
+                    .then(function (data) {
+                        console.log(data);
+                        ourLoopedHTML(data);
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                        document.getElementById("findAllPokemon").innerHTML = "Oops it errored out, check the console";
+                    });
+            }
+
+            // Async/Await in JS, this came around in 2016 (ECMAScript6)
+            async function asyncAllPokemon() {
+                const response = await fetch("http://localhost:8080/poke_project/pokemon");
+                const pokemons = await response.json();
+                console.log(pokemons);
+                ourLoopedHTML(pokemons);
+            }
+
+            function ourLoopedHTML(pokemons) {
+                let html_code = "";
+                for (i in pokemons) {
+                    let pokemon = pokemons[i];
+                    html_code += `<h1>Pokemons Name: ${pokemon.pokemonName} </h1>`;
+                    html_code += `<h3 style="margin-left: 40px">Element Type: ${pokemon.elementType.type} </h3>`;
+                    html_code += `<h3 style="margin-left: 40px">HP: ${pokemon.hp} </h3>`;
+                    html_code += `<h3 style="margin-left: 40px">Ability 1: ${pokemon.ability1.abilityName} </h3>`;
+                    html_code += `<h3 style="margin-left: 70px">Damage: ${pokemon.ability1.atkMultiplier * pokemon.atk} </h3>`;
+
+                    html_code += `<h3 style="margin-left: 40px">Ability 2: ${pokemon.ability2.abilityName} </h3>`;
+                    html_code += `<h3 style="margin-left: 70px">Damage: ${pokemon.ability2.atkMultiplier * pokemon.atk} </h3>`;
+                }
+                document.getElementById("findAllPokemon").innerHTML = html_code;
+            }
+        </script>
+    </body>
+
+</html>
