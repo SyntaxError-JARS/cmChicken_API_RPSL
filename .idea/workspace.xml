@@ -5,37 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8749daf2-c641-4d44-8b0f-200252d73503" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/customer/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/customer/CustomerDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/customer/CustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/customer/CustomerServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/menu/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/order/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/order/OrderDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/order/OrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/order/OrderServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/util/ConnectionFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/util/HibernateUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/util/exceptions/AuthenticationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/util/exceptions/InvalidRequestException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/util/exceptions/ResourcePersistanceException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/util/interfaces/Authable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/util/interfaces/Crudable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/util/interfaces/Serviceable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/util/logging/Logger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/util/web/dto/LoginCreds.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/util/web/dto/OrderInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/cmChicken-script.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/cmChicken.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/util/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/util/HibernateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cmChicken-script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cmChicken-script.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +41,10 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/karr1/OneDrive/Desktop/soyoung_lee_p1/cmchicken/src/main/java/com/revature/cmChicken/util/web/dto"
+    "last_opened_file_path": "C:/Users/karr1/OneDrive/Desktop/soyoung_lee_p1/cmchicken",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -80,6 +57,46 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\karr1\OneDrive\Desktop\soyoung_lee_p1\cmchicken\src\main\resources" />
     </key>
+  </component>
+  <component name="RunManager" selected="Maven.cmChicken [clean,package...]">
+    <configuration name="cmchicken" type="Application" factoryName="Application">
+      <module name="cmchicken" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="cmChicken [clean,package...]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="package" />
+                <option value="azure-webapp:deploy" />
+                <option value="-Dmaven.test.skip=true" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.cmchicken" />
+      <item itemvalue="Maven.cmChicken [clean,package...]" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

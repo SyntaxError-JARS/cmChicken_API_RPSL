@@ -19,10 +19,38 @@ public class HibernateUtil {
         if(sessionFactory == null){
             Configuration configuration = new Configuration();
             Properties prop = new Properties();
+
+            /* TODO: SET up AZURE */
+            /* Azure doen't like Threads and loading resources via a ClassLoader
             ClassLoader loader = Thread.currentThread().getContextClassLoader();
             prop.load(loader.getResourceAsStream("hibernate.properties"));
 
             configuration.setProperties(prop);
+            */
+
+            String url = System.getenv("SQLAZURECONNSTR_cmchikenDB");
+            String dbuser = System.getenv("DBUSER") ;
+            String dbpass = System.getenv("DBPASS") ;
+
+            configuration.setProperties("hibernate.connection.url", url);
+            configuration.setProperties("hibernate.connection.username", dbuser);
+            configuration.setProperties("hibernate.connection.password", dbpass);
+            configuration.setProperties("hibernate.direct", );
+            configuration.setProperties("hibernate.connection.driver_class", url);
+            configuration.setProperties("hibernate.show_sql", url);
+            configuration.setProperties("hibernate.hbm2ddl.auto", url);
+
+
+            /* hibernate.properties
+            hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+            hibernate.connection.driver_class=org.postgresql.Driver
+            hibernate.connection.url=jdbc:postgresql://localhost:5432/postgres?currentSchema=cmchicken
+            hibernate.connection.username=postgres
+            hibernate.connection.password=password
+            show_sql=true
+            hbm2ddl.auto=update
+             */
+
 
             configuration.addAnnotatedClass(Customer.class);
             //configuration.addAnnotatedClass(Menu.class);
