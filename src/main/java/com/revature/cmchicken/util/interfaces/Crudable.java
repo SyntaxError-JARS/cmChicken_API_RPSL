@@ -1,4 +1,4 @@
-package com.revature.cmChicken.util.interfaces;
+package com.revature.cmchicken.util.interfaces;
 
 import java.io.IOException;
 import java.util.List;

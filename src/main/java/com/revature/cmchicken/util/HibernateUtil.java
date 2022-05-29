@@ -1,6 +1,6 @@
-package com.revature.cmChicken.util;
+package com.revature.cmchicken.util;
 
-import com.revature.cmChicken.customer.Customer;
+import com.revature.cmchicken.customer.Customer;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
