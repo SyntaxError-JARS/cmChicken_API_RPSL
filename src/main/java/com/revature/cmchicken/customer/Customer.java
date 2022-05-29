@@ -1,4 +1,4 @@
-package com.revature.cmChicken.customer;
+package com.revature.cmchicken.customer;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
