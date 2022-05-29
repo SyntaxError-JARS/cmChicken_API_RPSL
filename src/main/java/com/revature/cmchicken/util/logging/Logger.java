@@ -1,9 +1,5 @@
-package com.revature.cmChicken.util.logging;
+package com.revature.cmchicken.util.logging;
 
-import org.hibernate.Session;
-import org.hibernate.annotations.common.util.impl.Log;
-
-import javax.imageio.IIOException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;

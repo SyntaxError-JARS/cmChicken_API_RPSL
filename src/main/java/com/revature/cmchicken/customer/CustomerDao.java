@@ -1,7 +1,7 @@
-package com.revature.cmChicken.customer;
+package com.revature.cmchicken.customer;
 
-import com.revature.cmChicken.util.HibernateUtil;
-import com.revature.cmChicken.util.interfaces.Crudable;
+import com.revature.cmchicken.util.HibernateUtil;
+import com.revature.cmchicken.util.interfaces.Crudable;
 
 import org.hibernate.HibernateException;
 import org.hibernate.query.Query;

@@ -1,4 +1,4 @@
-package com.revature.cmChicken.util.interfaces;
+package com.revature.cmchicken.util.interfaces;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

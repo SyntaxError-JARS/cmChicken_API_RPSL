@@ -1,10 +1,10 @@
-package com.revature.cmChicken.customer;
+package com.revature.cmchicken.customer;
 
-import com.revature.cmChicken.util.exceptions.AuthenticationException;
-import com.revature.cmChicken.util.exceptions.InvalidRequestException;
-import com.revature.cmChicken.util.exceptions.ResourcePersistanceException;
-import com.revature.cmChicken.util.interfaces.Serviceable;
-import com.revature.cmChicken.util.logging.Logger;
+import com.revature.cmchicken.util.exceptions.AuthenticationException;
+import com.revature.cmchicken.util.exceptions.InvalidRequestException;
+import com.revature.cmchicken.util.exceptions.ResourcePersistenceException;
+import com.revature.cmchicken.util.interfaces.Serviceable;
+import com.revature.cmchicken.util.logging.Logger;
 
 import java.util.List;
 
@@ -32,7 +32,7 @@ public class CustomerService implements Serviceable<Customer> {
 
         Customer persistedCustomer = customerDao.create(newCustomer);
         if(persistedCustomer == null){
-            throw new ResourcePersistanceException("Customer was not persisted to the database upon registration");
+            throw new ResourcePersistenceException("Customer was not persisted to the database upon registration");
         }
         logger.info("Customer has been peristed: " + newCustomer);
         return persistedCustomer;

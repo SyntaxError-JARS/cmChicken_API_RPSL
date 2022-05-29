@@ -1,4 +1,4 @@
-package com.revature.cmChicken.util;
+package com.revature.cmchicken.util;
 
 import java.io.IOException;
 import java.sql.Connection;
