@@ -23,8 +23,8 @@ public class ContextLoaderListener implements ServletContextListener {
 
         CustomerDao customerDao = new CustomerDao();
         CustomerService customerServices = new CustomerService(customerDao);
-        OrderDao orderDao = new OrderDao();
-        OrderServices orderServices = new OrderServices(orderDao);
+        //OrderDao orderDao = new OrderDao();
+        //OrderServices orderServices = new OrderServices(orderDao);
         MenuDao menuDao = new MenuDao();
         MenuServices menuServices = new MenuServices(menuDao);
         CreditCardDao creditCardDao = new CreditCardDao();
