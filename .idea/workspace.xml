@@ -5,42 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8749daf2-c641-4d44-8b0f-200252d73503" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/credit_card/CreditCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/credit_card/CreditCardDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/credit_card/CreditCardServices.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/menu/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/menu/MenuDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/menu/MenuServices.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/order/OrderServices.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/revature/cmchicken/services/TrainerServiceTestSuite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/revature/cmchicken/util/ConnectionFactoryTestSuite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/revature/cmchicken/util/HibernateUtilTestSuite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/customer/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/customer/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/customer/CustomerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/customer/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/customer/CustomerServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/customer/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/customer/CustomerServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/menu/Menu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/order/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/order/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/order/OrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/order/OrderService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/order/OrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/order/OrderServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/util/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/util/ConnectionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/util/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/util/HibernateUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/util/exceptions/AuthenticationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/util/exceptions/AuthenticationException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/util/exceptions/InvalidRequestException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/util/exceptions/InvalidRequestException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/util/exceptions/ResourcePersistanceException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/util/exceptions/ResourcePersistenceException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/util/interfaces/Authable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/util/interfaces/Authable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/util/interfaces/Crudable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/util/interfaces/Crudable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/util/interfaces/Serviceable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/util/interfaces/Serviceable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/util/logging/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/util/logging/Logger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/util/web/dto/LoginCreds.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/util/web/dto/LoginCreds.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmChicken/util/web/dto/OrderInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/util/web/dto/OrderInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cmChicken-script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cmchicken-script.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cmChicken.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cmchicken.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +20,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="slee_work" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
