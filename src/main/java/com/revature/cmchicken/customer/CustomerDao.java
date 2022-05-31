@@ -32,9 +32,15 @@ public class CustomerDao implements Crudable <Customer> {
 
     @Override
     public List<Customer> findAll() {
+<<<<<<< HEAD
 
         try {
             Session session = HibernateUtil.getSession();
+=======
+        Session session = null;
+        try {
+            session = HibernateUtil.getSession();
+>>>>>>> b35ed4996b44af32572dd94d720335f38997b9fe
             Transaction transaction = session.beginTransaction();
             List<Customer> customerList = session.createQuery("FROM Customer").list();
             transaction.commit();

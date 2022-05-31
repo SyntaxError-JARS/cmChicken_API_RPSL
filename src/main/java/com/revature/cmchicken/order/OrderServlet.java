@@ -1,5 +1,6 @@
 package com.revature.cmchicken.order;
 
+<<<<<<< HEAD
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.cmchicken.customer.Customer;
 import com.revature.cmchicken.customer.CustomerServices;
@@ -132,4 +133,7 @@ public class OrderServlet extends HttpServlet implements Authable {
             resp.setStatus(500);
         }
     }
+=======
+public class OrderServlet {
+>>>>>>> b35ed4996b44af32572dd94d720335f38997b9fe
 }

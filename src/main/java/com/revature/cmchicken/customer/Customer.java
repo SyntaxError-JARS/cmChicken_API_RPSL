@@ -10,7 +10,10 @@ import javax.persistence.*;
 public class Customer {
 
     @Id
+<<<<<<< HEAD
     @Column(name="username")
+=======
+>>>>>>> b35ed4996b44af32572dd94d720335f38997b9fe
     private String username;
     private String fname;
     private String lname;
@@ -20,6 +23,7 @@ public class Customer {
     private double balance;
     private int is_admin;
 
+<<<<<<< HEAD
     // JACKSON REQUIRES A NO ARG CONSTRUCTOR
     public Customer(){
     }
@@ -30,6 +34,9 @@ public class Customer {
 
     public Customer(String username, String fname, String lname, String password, double balance, int is_admin) {
         super();
+=======
+    public Customer(String username, String fname, String lname, String password, double balance, int is_admin) {
+>>>>>>> b35ed4996b44af32572dd94d720335f38997b9fe
         this.username = username;
         this.fname = fname;
         this.lname = lname;

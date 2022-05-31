@@ -1,5 +1,6 @@
 package com.revature.cmchicken.order;
 
+<<<<<<< HEAD
 import javax.persistence.*;
 
 import java.util.Objects;
@@ -94,4 +95,9 @@ public class Order {
     public void setCustomer_username(String customer_username) {
         this.customer_username = customer_username;
     }
+=======
+public class Order {
+
+
+>>>>>>> b35ed4996b44af32572dd94d720335f38997b9fe
 }
