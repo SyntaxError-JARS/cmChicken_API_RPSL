@@ -13,6 +13,7 @@ com\revature\cmchicken\util\ConnectionFactory.class
 com\revature\cmchicken\customer\CustomerServlet.class
 com\revature\cmchicken\menu\MenuDao.class
 com\revature\cmchicken\util\logging\Logger.class
+com\revature\cmchicken\util\servlets\TestServlet.class
 com\revature\cmchicken\customer\CustomerService.class
 com\revature\cmchicken\util\exceptions\ResourcePersistenceException.class
 com\revature\cmchicken\util\exceptions\AuthenticationException.class
