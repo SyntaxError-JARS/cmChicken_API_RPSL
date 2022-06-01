@@ -1,24 +1,13 @@
 package com.revature.cmchicken.menu;
 
-import javax.persistence.*;
-import java.util.Objects;
-
-@Entity
-@Table(name = "menu")
 public class Menu {
-
-    @Id
-    @Column(name = "item_name")
     private String item_name;
-
-    private double  cost;
-
+    private int cost;
     private String protein;
-
     private boolean is_substitutable;
 
-    public Menu(){
 
+    public Menu() {
     }
 
     @Override
@@ -26,22 +15,9 @@ public class Menu {
         return "Menu{" +
                 "item_name='" + item_name + '\'' +
                 ", cost=" + cost +
-                ", protein='" + protein + '\'' +
+                ", protein=" + protein +
                 ", is_substitutable=" + is_substitutable +
                 '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Menu menu = (Menu) o;
-        return Double.compare(menu.getCost(), getCost()) == 0 && isIs_substitutable() == menu.isIs_substitutable() && Objects.equals(getItem_name(), menu.getItem_name()) && Objects.equals(getProtein(), menu.getProtein());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getItem_name(), getCost(), getProtein(), isIs_substitutable());
     }
 
     public String getItem_name() {
@@ -52,11 +28,11 @@ public class Menu {
         this.item_name = item_name;
     }
 
-    public double getCost() {
+    public int getCost() {
         return cost;
     }
 
-    public void setCost(double cost) {
+    public void setCost(int cost) {
         this.cost = cost;
     }
 
@@ -68,7 +44,7 @@ public class Menu {
         this.protein = protein;
     }
 
-    public boolean isIs_substitutable() {
+    public boolean getIs_substitutable() {
         return is_substitutable;
     }
 

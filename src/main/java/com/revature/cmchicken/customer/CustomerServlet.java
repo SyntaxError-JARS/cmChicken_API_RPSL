@@ -2,10 +2,9 @@ package com.revature.cmchicken.customer;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-<<<<<<< HEAD
+
 import com.revature.cmchicken.util.exceptions.ResourcePersistenceException;
-=======
->>>>>>> b35ed4996b44af32572dd94d720335f38997b9fe
+
 import com.revature.cmchicken.util.interfaces.Authable;
 import com.revature.cmchicken.util.logging.Logger;
 
@@ -14,35 +13,27 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-<<<<<<< HEAD
+
 import java.util.List;
-=======
->>>>>>> b35ed4996b44af32572dd94d720335f38997b9fe
+
 
 import static com.revature.cmchicken.util.interfaces.Authable.checkAuth;
 
 public class CustomerServlet extends HttpServlet implements Authable {
 
-<<<<<<< HEAD
+
     private final CustomerServices customerService;
     private final ObjectMapper mapper;
     private final Logger logger = Logger.getLogger();
 
     public CustomerServlet(CustomerServices customerServices, ObjectMapper mapper){
         this.customerService = customerServices;
-=======
-    private final CustomerService customerService;
-    private final ObjectMapper mapper;
-    private final Logger logger = logger.getLogger();
 
-    public CustomerServlet(CustomerService customerService, ObjectMapper mapper){
-        this.customerService = customerService;
->>>>>>> b35ed4996b44af32572dd94d720335f38997b9fe
         this.mapper = mapper;
     }
 
     @Override
-<<<<<<< HEAD
+
     protected void doOptions(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doOptions(req, resp);
         resp.addHeader("Access-Control-Allow-Origin", "*");
@@ -92,35 +83,10 @@ public class CustomerServlet extends HttpServlet implements Authable {
         resp.getWriter().write(payload);
     }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        resp.addHeader("Access-Control-Allow-Origin", "*");
-        resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
-        resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-
-        Customer customer = mapper.readValue(req.getInputStream(), Customer.class); // from JSON to Java Object (Pokemon)
-        Customer persistedCustomer = customerService.create(customer);
-
-        String payload = mapper.writeValueAsString(persistedCustomer); // Mapping from Java Object (Pokemon) to JSON
-
-        resp.getWriter().write("Persisted the provided customer as show below \n");
-        resp.getWriter().write(payload);
-        resp.setStatus(201);
-=======
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if(!checkAuth(req,resp)) return;
-
-        if(req.getParameter("id") != null && req.getParameter("password") != null) {
-
-
-        }
->>>>>>> b35ed4996b44af32572dd94d720335f38997b9fe
-    }
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-<<<<<<< HEAD
+
 
         resp.addHeader("Access-Control-Allow-Origin", "*");
         resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
@@ -180,18 +146,3 @@ public class CustomerServlet extends HttpServlet implements Authable {
         }
     }
 }
-=======
-        super.doPut(req, resp);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
-    }
-
-    @Override
-    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doDelete(req, resp);
-    }
-}
->>>>>>> b35ed4996b44af32572dd94d720335f38997b9fe

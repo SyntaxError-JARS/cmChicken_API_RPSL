@@ -1,9 +1,5 @@
 package com.revature.cmchicken.util.web.dto;
 
-import com.revature.cmchicken.customer.Customer;
-import com.revature.cmchicken.menu.Menu;
-import com.revature.cmchicken.credit_card.CreditCard;
-
 
 public class OrderInitializer {
 

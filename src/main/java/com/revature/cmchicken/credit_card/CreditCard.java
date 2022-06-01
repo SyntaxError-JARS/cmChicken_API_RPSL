@@ -1,55 +1,31 @@
 package com.revature.cmchicken.credit_card;
 
-import javax.persistence.*;
-import java.util.Objects;
-
-@Entity
-@Table(name = "credit_card")
 public class CreditCard {
-
-    @Id
-    @Column(name = "cc_number")
     private String cc_number;
-
     private String cc_name;
-
     private int cvv;
-
     private String exp_date;
+    private  int zip;
+    private int limit;
+    private String user_name;
 
-    private int zip;
-
-    @ManyToOne(optional = false) //???
-    @JoinColumn(name = "customer_username", referencedColumnName = "username")
-    private String customer_username;
-
-    // JACKSON REQUIRES A NO ARG CONSTRUCTOR
-    public CreditCard() {
+    public CreditCard(String cc_number, String cc_name, int cvv, String exp_date, int zip, int limit, String user_name) {
+        super();
+        this.cc_number = cc_number;
+        this.cc_name = cc_name;
+        this.cvv = cvv;
+        this.exp_date = exp_date;
+        this.zip = zip;
+        this.limit = limit;
+        this.user_name = user_name;
     }
 
-    @Override
-    public String toString() {
-        return "CreditCard{" +
-                "cc_number='" + cc_number + '\'' +
-                ", cc_name='" + cc_name + '\'' +
-                ", cvv=" + cvv +
-                ", exp_date='" + exp_date + '\'' +
-                ", zip=" + zip +
-                ", customer_username='" + customer_username + '\'' +
-                '}';
+    public String getCc_number() {
+        return cc_number;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        CreditCard that = (CreditCard) o;
-        return getCvv() == that.getCvv() && getZip() == that.getZip() && Objects.equals(getCc_number(), that.getCc_number()) && Objects.equals(getCc_name(), that.getCc_name()) && Objects.equals(getExp_date(), that.getExp_date()) && Objects.equals(getCustomer_username(), that.getCustomer_username());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getCc_number(), getCc_name(), getCvv(), getExp_date(), getZip(), getCustomer_username());
+    public void setCc_number(String cc_number) {
+        this.cc_number = cc_number;
     }
 
     public String getCc_name() {
@@ -84,19 +60,31 @@ public class CreditCard {
         this.zip = zip;
     }
 
-    public String getCustomer_username() {
-        return customer_username;
+    public int getLimit() {
+        return limit;
     }
 
-    public void setCustomer_username(String customer_username) {
-        this.customer_username = customer_username;
+    public void setLimit(int limit) {
+        this.limit = limit;
     }
 
-    public String getCc_number() {
-        return cc_number;
+    public String getUser_name() {
+        return user_name;
     }
 
-    public void setCc_number(String cc_number) {
-        this.cc_number = cc_number;
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
+    }
+
+    public String toString() {
+        return "CreditCard{" +
+                "cc_number='" + cc_number + '\'' +
+                ", cc_name='" + cc_name + '\'' +
+                ", cvv='" + cvv + '\'' +
+                ", exp_date='" + exp_date + '\'' +
+                ", zip='" + zip + '\'' +
+                ", limit='" + limit + '\'' +
+                ", user_name='" + user_name + '\'' +
+                '}';
     }
 }

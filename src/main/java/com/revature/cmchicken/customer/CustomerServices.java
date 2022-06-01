@@ -1,5 +1,6 @@
 package com.revature.cmchicken.customer;
 
+import com.revature.cmchicken.credit_card.CreditCardDao;
 import com.revature.cmchicken.util.exceptions.AuthenticationException;
 import com.revature.cmchicken.util.exceptions.InvalidRequestException;
 import com.revature.cmchicken.util.exceptions.ResourcePersistenceException;
@@ -14,6 +15,10 @@ public class CustomerServices implements Serviceable<Customer> {
     private CustomerDao customerDao;
 
     private Logger logger = Logger.getLogger();
+
+    public CustomerServices(CustomerDao customerDao) {this.customerDao = customerDao; }
+
+
 
 
     public boolean validateUserNameNotUsed(String username){

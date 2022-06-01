@@ -1,6 +1,6 @@
 package com.revature.cmchicken.order;
 
-<<<<<<< HEAD
+
 import com.revature.cmchicken.util.HibernateUtil;
 import com.revature.cmchicken.util.interfaces.Crudable;
 
@@ -117,7 +117,5 @@ public class OrderDao implements Crudable<Order> {
             HibernateUtil.closeSession();
         }
     }
-=======
-public class OrderDao {
->>>>>>> b35ed4996b44af32572dd94d720335f38997b9fe
+
 }
