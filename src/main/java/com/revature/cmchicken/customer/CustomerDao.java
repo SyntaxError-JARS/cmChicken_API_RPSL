@@ -1,8 +1,10 @@
 package com.revature.cmchicken.customer;
 
+import com.revature.cmchicken.credit_card.CreditCardDao;
 import com.revature.cmchicken.util.HibernateUtil;
 import com.revature.cmchicken.util.interfaces.Crudable;
 
+import com.revature.cmchicken.util.logging.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.query.Query;
 import org.hibernate.Session;
@@ -32,9 +34,10 @@ public class CustomerDao implements Crudable <Customer> {
 
     @Override
     public List<Customer> findAll() {
-        Session session = null;
+
         try {
-            session = HibernateUtil.getSession();
+            Session session = HibernateUtil.getSession();
+
             Transaction transaction = session.beginTransaction();
             List<Customer> customerList = session.createQuery("FROM Customer").list();
             transaction.commit();

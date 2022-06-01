@@ -1,6 +1,9 @@
 package com.revature.cmchicken.util;
 
+import com.revature.cmchicken.credit_card.CreditCard;
 import com.revature.cmchicken.customer.Customer;
+import com.revature.cmchicken.menu.Menu;
+import com.revature.cmchicken.order.Order;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -25,9 +28,9 @@ public class HibernateUtil {
             configuration.setProperties(prop);
 
             configuration.addAnnotatedClass(Customer.class);
-            //configuration.addAnnotatedClass(Menu.class);
-            //configuration.addAnnotatedClass(Order.class);
-            //configuration.addAnnotatedClass(CreditCard.class);
+            configuration.addAnnotatedClass(Menu.class);
+            configuration.addAnnotatedClass(Order.class);
+            configuration.addAnnotatedClass(CreditCard.class);
 
             ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                     .applySettings(configuration.getProperties()).build();

@@ -15,6 +15,7 @@ public class MenuServices implements Serviceable<Menu> {
     private Logger logger = Logger.getLogger();
 
     public MenuServices(MenuDao menuDao) {
+        this.menuDao = menuDao;
 
     }
 
