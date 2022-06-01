@@ -1,6 +1,13 @@
 package com.revature.cmchicken.menu;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "menu")
 public class Menu {
+    @Id
     private String item_name;
     private int cost;
     private String protein;

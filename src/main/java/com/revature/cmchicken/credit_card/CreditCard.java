@@ -1,6 +1,13 @@
 package com.revature.cmchicken.credit_card;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "credit_card")
 public class CreditCard {
+    @Id
     private String cc_number;
     private String cc_name;
     private int cvv;
@@ -8,6 +15,9 @@ public class CreditCard {
     private  int zip;
     private int limit;
     private String user_name;
+
+    public CreditCard() {
+    }
 
     public CreditCard(String cc_number, String cc_name, int cvv, String exp_date, int zip, int limit, String user_name) {
         super();

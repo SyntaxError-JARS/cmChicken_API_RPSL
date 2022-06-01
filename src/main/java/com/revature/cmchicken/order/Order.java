@@ -14,8 +14,8 @@ public class Order {
     @Column(name = "id")
     private int id;
 
-    @ManyToOne // ???
-    @JoinColumn(name = "menu_item", referencedColumnName = "item_name")
+   // @ManyToOne // ???
+   // @JoinColumn(name = "menu_item", referencedColumnName = "item_name")
     private String menu_item;
 
     private String comment;
@@ -24,8 +24,8 @@ public class Order {
 
     private String order_date;
 
-    @ManyToOne // ???
-    @JoinColumn(name = "customer_username", referencedColumnName = "username")
+    //@ManyToOne // ???
+   // @JoinColumn(name = "customer_username", referencedColumnName = "username")
     private String customer_username;
 
 
