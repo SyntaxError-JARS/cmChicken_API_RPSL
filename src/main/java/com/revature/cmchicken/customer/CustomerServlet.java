@@ -17,7 +17,7 @@ public class CustomerServlet extends HttpServlet implements Authable {
 
     private final CustomerService customerService;
     private final ObjectMapper mapper;
-    private final Logger logger = logger.getLogger();
+   // private final Logger logger = logger.getLogger();
 
     public CustomerServlet(CustomerService customerService, ObjectMapper mapper){
         this.customerService = customerService;

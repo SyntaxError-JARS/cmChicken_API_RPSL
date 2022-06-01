@@ -15,6 +15,10 @@ public class CustomerService implements Serviceable<Customer> {
 
     private Logger logger = Logger.getLogger();
 
+    public CustomerService(CustomerDao customerDao) {
+
+    }
+
 
     public boolean validateUserNameNotUsed(String username){
         return customerDao.checkUserName(username);
