@@ -17,15 +17,20 @@ public class CreditCardServices implements Serviceable<CreditCard> {
 
     @Override
     public CreditCard create(CreditCard newCreditCard) {
-        if (!validateCreditCard (newCreditCard)){
-            throw new InvalidRequestException("Credit card input was not validated, either empty Strings or null values");
-        }
+        System.out.println("CreditCard trying to be registered: " + newCreditCard);
+        logger.info("CreditCard trying to be registered: ");
+
+        System.out.println("before issue?");
         CreditCard persistedCreditCard = creditCardDao.create(newCreditCard);
-        if(persistedCreditCard == null){
-            throw new ResourcePersistenceException("Credit card was not persisted to the database");
+        System.out.println("before issue????");
+
+        if (persistedCreditCard == null) {
+           return null;
         }
-        return newCreditCard;
+//        logger.info("CreditCard has been persisted: " + newCustomer);
+        return persistedCreditCard;
     }
+
 
     @Override
     public List<CreditCard> readAll() throws IOException {

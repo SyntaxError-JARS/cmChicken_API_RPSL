@@ -13,7 +13,6 @@ public class MenuDao implements Crudable<Menu> {
 
     @Override
     public Menu create(Menu newMenu) {
-
         try {
             Session session = HibernateUtil.getSession();
             Transaction transaction = session.beginTransaction();
@@ -22,7 +21,7 @@ public class MenuDao implements Crudable<Menu> {
             return newMenu;
         } catch (HibernateException | IOException e) {
             e.printStackTrace();
-        return null;
+            return null;
         } finally {
             HibernateUtil.closeSession();
         }
@@ -86,12 +85,13 @@ public class MenuDao implements Crudable<Menu> {
         try {
             Session session = HibernateUtil.getSession();
             Transaction transaction = session.beginTransaction();
-            session.remove(item_name);
+            Menu menu = session.load(Menu.class, item_name);
+            session.remove(menu);
             transaction.commit();
             return true;
         } catch (HibernateException | IOException e) {
             e.printStackTrace();
-        return false;
+            return false;
         } finally {
             HibernateUtil.closeSession();
         }

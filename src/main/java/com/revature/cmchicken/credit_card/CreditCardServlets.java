@@ -20,22 +20,39 @@ public class CreditCardServlets extends HttpServlet {
         this.mapper = mapper;
     }
 
+
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.addHeader("Access-Control-Allow-Origin", "*");
         resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-        if (req.getParameter("pokemonName") != null) {
-            CreditCard creditCard = creditCardServices.readByID(req.getParameter("creditCard"));
+
+        if(req.getParameter("id") != null){
+            CreditCard creditCard;
+            try {
+                creditCard = creditCardServices.readById(req.getParameter("id")); // EVERY PARAMETER RETURN FROM A URL IS A STRING
+
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
             String payload = mapper.writeValueAsString(creditCard);
             resp.getWriter().write(payload);
             return;
         }
 
-        List<CreditCard> creditCardData = creditCardServices.readAll();
-        String payload = mapper.writeValueAsString(creditCardData);
+        List<CreditCard> creditCards = creditCardServices.readAll();
+        String payload = mapper.writeValueAsString(creditCards);
 
         resp.getWriter().write(payload);
+    }
+
+    @Override
+    protected void doOptions(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        super.doOptions(req, resp);
+        resp.addHeader("Access-Control-Allow-Origin", "*");
+        resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+        resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
     }
 
     @Override
@@ -43,14 +60,18 @@ public class CreditCardServlets extends HttpServlet {
         resp.addHeader("Access-Control-Allow-Origin", "*");
         resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-        CreditCard newCreditCard = mapper.readValue(req.getInputStream(), CreditCard.class); // from JSON to Java Object (Pokemon)
-        CreditCard persistedCreditCard = creditCardServices.CreateCreditCard(newCreditCard);
 
-        String payload = mapper.writeValueAsString(persistedCreditCard); // Mapping from Java Object (Pokemon) to JSON
+        CreditCard persistedCreditCard;
+        try {
+            CreditCard creditCard = mapper.readValue(req.getInputStream(), CreditCard.class);
+            persistedCreditCard = creditCardServices.create(creditCard);
 
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        String payload = mapper.writeValueAsString(persistedCreditCard);
 
-
-        resp.getWriter().write("Sample output \n");
+        resp.getWriter().write("Persisted the provided CreditCard as show below \n");
         resp.getWriter().write(payload);
         resp.setStatus(201);
     }

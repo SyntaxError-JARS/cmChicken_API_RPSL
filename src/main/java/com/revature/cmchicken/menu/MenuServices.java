@@ -22,17 +22,21 @@ public class MenuServices implements Serviceable<Menu> {
 
     @Override
     public Menu create(Menu newMenu) {
-        logger.info("Customer trying to be registered: " + newMenu);
-        if(!validatedMenu(newMenu)) {
-            throw new InvalidRequestException("User input was not validated, either empty String or null values");
-    }
+        System.out.println("Menu trying to be registered: " + newMenu);
+        logger.info("Menu trying to be registered: ");
+
+        System.out.println("before issue?");
         Menu persistedMenu = menuDao.create(newMenu);
-        if(persistedMenu == null){
-            throw new ResourcePersistenceException("Menu was not persisted to the database upon registration");
+        System.out.println("before issue????");
+
+        if (persistedMenu == null) {
+            System.out.println("FAILED TO CREATE USER");
+            return null;
         }
-        logger.info("Menu has been peristed: " + newMenu);
+//        logger.info("Menu has been persisted: " + newCustomer);
         return persistedMenu;
     }
+
 
     @Override
     public List<Menu> readAll() throws IOException {

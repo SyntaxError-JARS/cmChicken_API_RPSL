@@ -1,6 +1,7 @@
 package com.revature.cmchicken.menu;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.revature.cmchicken.util.exceptions.InvalidRequestException;
 import com.revature.cmchicken.util.exceptions.ResourcePersistenceException;
 
 import javax.servlet.ServletException;
@@ -34,15 +35,26 @@ public class MenuServlets extends HttpServlet {
         resp.addHeader("Access-Control-Allow-Origin", "*");
         resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-        if(req.getParameter("menu") != null){
-            Menu menu = menuServices.readByID("menu");
+
+        if(req.getParameter("id") != null && req.getParameter("email") != null){
+            resp.getWriter().write("Hey you have the follow id and email " + req.getParameter("id") + " " + req.getParameter("email") );
+            return;
+        }
+
+        if(req.getParameter("id") != null){
+            Menu menu;
+            try {
+                menu = menuServices.readById(req.getParameter("id")); // EVERY PARAMETER RETURN FROM A URL IS A STRING
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
             String payload = mapper.writeValueAsString(menu);
             resp.getWriter().write(payload);
             return;
         }
 
-        List<Menu> menu = menuServices.readAll();
-        String payload = mapper.writeValueAsString(menu);
+        List<Menu> menus = menuServices.readAll();
+        String payload = mapper.writeValueAsString(menus);
 
         resp.getWriter().write(payload);
 
@@ -53,14 +65,19 @@ public class MenuServlets extends HttpServlet {
         resp.addHeader("Access-Control-Allow-Origin", "*");
         resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-        Menu newMenu = mapper.readValue(req.getInputStream(), Menu.class); // from JSON to Java Object (Pokemon)
-        Menu persistedMenuItem = menuServices.Createitem_name(newMenu);
 
-        String payload = mapper.writeValueAsString(persistedMenuItem); // Mapping from Java Object (Pokemon) to JSON
+        Menu persistedMenu;
+        try {
+            Menu menu = mapper.readValue(req.getInputStream(), Menu.class);
+            persistedMenu = menuServices.create(menu);
+        } catch (InvalidRequestException e){
+            resp.getWriter().write(e.getMessage());
+            resp.setStatus(404);
+            return;
+        }
+        String payload = mapper.writeValueAsString(persistedMenu);
 
-
-
-        resp.getWriter().write("Persisted the provided pokemon as show below \n");
+        resp.getWriter().write("Persisted the provided Menu as show below \n");
         resp.getWriter().write(payload);
         resp.setStatus(201);
     }
@@ -86,26 +103,19 @@ public class MenuServlets extends HttpServlet {
         resp.addHeader("Access-Control-Allow-Origin", "*");
         resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-
-        //if(!checkAuth(req, resp)) return;
-        if(req.getParameter("menu") == null){
-
-            resp.getWriter().write("Sample output");
+        //if(!checkAuth(req,resp)) return;
+        if (req.getParameter("id") == null) {
+            resp.getWriter().write("In order to delete, please provide your user id as a verification into the url with ?id=your@id.here");
             resp.setStatus(401);
             return;
         }
-        String menuItem = req.getParameter("menu");
 
-        try {
-            menuServices.delete(menuItem);
-            resp.getWriter().write("Delete menu from the database");
-        } catch (ResourcePersistenceException e){
-            resp.getWriter().write(e.getMessage());
-            resp.setStatus(404);
-        } catch (Exception e){
-            resp.getWriter().write(e.getMessage());
-            resp.setStatus(500);
-        }
+        String username = req.getParameter("id");
+        Menu authMenu = (Menu) req.getSession().getAttribute("authMenu");
+
+
+//        if(!authMenuCard.getUsername().equals(username)){
+//            resp.getWriter().write("username provided does not match the user logged in, double check for confirmation of deletion");
+//            return;
     }
-
 }

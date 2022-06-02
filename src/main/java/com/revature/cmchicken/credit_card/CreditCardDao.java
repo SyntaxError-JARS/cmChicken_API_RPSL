@@ -15,17 +15,15 @@ public class CreditCardDao implements Crudable<CreditCard> {
     @Override
     public CreditCard create(CreditCard newCreditCard) {
 
-
         try {
             Session session = HibernateUtil.getSession();
             Transaction transaction = session.beginTransaction();
             session.save(newCreditCard);
+            transaction.commit();
             return newCreditCard;
-
-
         } catch (HibernateException | IOException e) {
             e.printStackTrace();
-        return null;
+            return null;
         } finally {
             HibernateUtil.closeSession();
         }
