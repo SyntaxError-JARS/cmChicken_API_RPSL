@@ -44,7 +44,7 @@ public class AuthServlet extends HttpServlet {
 
             LoginCreds loginCreds = mapper.readValue(req.getInputStream(), LoginCreds.class);
 
-            Customer authCustomer = customerServices.authenticateCustomer(loginCreds.getUsername(), loginCreds.getPassword());
+            Customer authCustomer = customerServices.authenticateCustomer(loginCreds.getUsername(), loginCreds.getCpassword());
 
             HttpSession httpSession = req.getSession(true);
             httpSession.setAttribute("authCustomer", authCustomer);

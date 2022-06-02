@@ -70,9 +70,9 @@ public class MenuServices implements Serviceable<Menu> {
     public boolean validateInput(Menu newMenu) {
         if(newMenu == null) return false;
         if(newMenu.getItem_name() == null || newMenu.getItem_name().trim().equals(("")))return false;
-        if(newMenu.getCost() == 0 ) return false;
+        if(newMenu.getPrice() == 0 ) return false;
         if(newMenu.getProtein() == null || newMenu.getProtein().trim().equals((""))) return false;
-        if(newMenu.getIs_substitutable() == false ) return false;
+        if(newMenu.isIs_substitutable() == false ) return false;
         return true;
     }
 
@@ -80,9 +80,9 @@ public class MenuServices implements Serviceable<Menu> {
     private boolean validatedMenu(Menu newMenu) {
         if(newMenu == null) return false;
         if(newMenu.getItem_name() == null || newMenu.getItem_name().trim().equals(("")))return false;
-        if(newMenu.getCost() == 0 ) return false;
+        if(newMenu.getPrice() == 0 ) return false;
         if(newMenu.getProtein() == null || newMenu.getProtein().trim().equals((""))) return false;
-        if(newMenu.getIs_substitutable() == false ) return false;
+        if(newMenu.isIs_substitutable() == false ) return false;
         return true;
     }
 

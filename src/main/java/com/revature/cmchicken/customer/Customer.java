@@ -12,31 +12,48 @@ public class Customer {
     @Id
     @Column(name="username")
     private String username;
+    @Column(name="fname")
     private String fname;
     private String lname;
 
-    @JsonProperty(access=JsonProperty.Access.WRITE_ONLY)
-    private String password;
+    //@JsonProperty(access=JsonProperty.Access.WRITE_ONLY)
+    private String cpassword;
     private double balance;
     private boolean is_admin;
+
 
 
     // JACKSON REQUIRES A NO ARG CONSTRUCTOR
     public Customer(){
     }
 
-    public Customer(String password) {
-        this.password = password;
+    // TODO: check for this constructor
+    public Customer(String cpassword) {
+        this.cpassword = cpassword;
     }
 
-    public Customer(String username, String fname, String lname, String password, double balance, boolean is_admin) {
+    public Customer(String username, String fname, String lname, String cpassword, double balance, boolean is_admin) {
         super();
         this.username = username;
         this.fname = fname;
         this.lname = lname;
-        this.password = password;
+        this.cpassword = cpassword;
         this.balance = balance;
         this.is_admin = is_admin;
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "username='" + username + '\'' +
+                ", fname='" + fname + '\'' +
+                ", lname='" + lname + '\'' +
+                ", cpassword='" + cpassword + '\'' +
+                ", balance=" + balance +
+                ", is_admin=" + is_admin +
+                '}';
     }
 
     public String getUsername() {
@@ -63,12 +80,12 @@ public class Customer {
         this.lname = lname;
     }
 
-    public String getPassword() {
-        return password;
+    public String getCpassword() {
+        return cpassword;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setCpassword(String cpassword) {
+        this.cpassword = cpassword;
     }
 
     public double getBalance() {
@@ -79,24 +96,11 @@ public class Customer {
         this.balance = balance;
     }
 
-    public boolean getIs_admin() {
+    public boolean isIs_admin() {
         return is_admin;
     }
 
     public void setIs_admin(boolean is_admin) {
         this.is_admin = is_admin;
-    }
-
-
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "username='" + username + '\'' +
-                ", fname='" + fname + '\'' +
-                ", lname='" + lname + '\'' +
-                ", password='" + password + '\'' +
-                ", balance=" + balance +
-                ", is_admin=" + is_admin +
-                '}';
     }
 }

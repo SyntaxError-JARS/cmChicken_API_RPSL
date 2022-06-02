@@ -4,16 +4,16 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import com.revature.cmchicken.credit_card.CreditCardServices;
 import com.revature.cmchicken.customer.CustomerServices;
-import com.revature.cmchicken.order.OrderServices;
+import com.revature.cmchicken.menu_order.MenuOrderServices;
 import com.revature.cmchicken.menu.MenuServices;
 
 import com.revature.cmchicken.credit_card.CreditCardDao;
 import com.revature.cmchicken.menu.MenuDao;
-import com.revature.cmchicken.order.OrderDao;
+import com.revature.cmchicken.menu_order.MenuOrderDao;
 import com.revature.cmchicken.customer.CustomerDao;
 
 import com.revature.cmchicken.customer.CustomerServlet;
-import com.revature.cmchicken.order.OrderServlet;
+import com.revature.cmchicken.menu_order.MenuOrderServlet;
 import com.revature.cmchicken.credit_card.CreditCardServlets;
 import com.revature.cmchicken.util.web.servlets.AuthServlet;
 import com.revature.cmchicken.menu.MenuServlets;
@@ -35,27 +35,27 @@ public class ContextLoaderListener implements ServletContextListener {
         CustomerDao customerDao = new CustomerDao();
         MenuDao menuDao = new MenuDao();
         CreditCardDao creditCardDao = new CreditCardDao();
-        OrderDao orderDao = new OrderDao();
+        MenuOrderDao menuOrderDao = new MenuOrderDao();
 
         // Instantiate and intialize the services with their dao dependency
         CustomerServices customerServices = new CustomerServices(customerDao);
         MenuServices menuServices = new MenuServices(menuDao);
         CreditCardServices creditCardServices = new CreditCardServices(creditCardDao);
-        OrderServices orderServices = new OrderServices(orderDao,customerDao, menuDao);
+        MenuOrderServices menuOrderServices = new MenuOrderServices(menuOrderDao,customerDao, menuDao);
 
 
         AuthServlet authServlet = new AuthServlet(customerServices, mapper);
         CustomerServlet customerServlet = new CustomerServlet(customerServices, mapper);
         MenuServlets menuServlet = new MenuServlets(menuServices, mapper);
         CreditCardServlets creditCardServlet = new CreditCardServlets(creditCardServices, mapper);
-        OrderServlet orderServlet = new OrderServlet(orderServices, mapper, menuServices, customerServices);
+        MenuOrderServlet menuOrderServlet = new MenuOrderServlet(menuOrderServices, mapper, menuServices, customerServices);
 
         ServletContext context = sce.getServletContext();
         context.addServlet("AuthServlet", authServlet).addMapping("/auth");
         context.addServlet("CustomerServlet", customerServlet).addMapping("/customer/*");
         context.addServlet("MenuServlet", menuServlet).addMapping("/menu/*");
         context.addServlet("CreditCardServlet", creditCardServlet).addMapping("/creditcard/*");
-        context.addServlet("order", orderServlet).addMapping("/order/*");
+        context.addServlet("MenuOrderServlet", menuOrderServlet).addMapping("/order/*");
 
     }
 

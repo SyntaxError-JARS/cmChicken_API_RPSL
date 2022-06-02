@@ -104,19 +104,20 @@ public class CustomerDao implements Crudable <Customer> {
         }
     }
 
-    public Customer authenticateCustomer(String username, String password){
+    public Customer authenticateCustomer(String username, String cpassword){
         try{
             Session session = HibernateUtil.getSession();
             Transaction transaction = session.beginTransaction();
 
-//            Query query = session.createQuery("from customer where username= :username and password= :password");
-//            query.setParameter("username", username);
-//            query.setParameter("password", password);
-            Customer customer = session.get(Customer.class, username);
+            Query query = session.createQuery("FROM Customer where username= :username and cpassword= :cpassword");
+            query.setParameter("username", username);
+            query.setParameter("cpassword", cpassword);
+//            Customer customer = session.get(Customer.class, username);
+//            transaction.commit();
+//            if (! customer.getPassword().equals(password) )
+//                return null;
+            Customer customer = (Customer) query.uniqueResult();
             transaction.commit();
-            if (! customer.getPassword().equals(password) )
-                return null;
-
             return customer;
         } catch (HibernateException | IOException e){
             e.printStackTrace();

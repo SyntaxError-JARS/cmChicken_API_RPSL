@@ -2,13 +2,13 @@ com\revature\cmchicken\credit_card\CreditCardServices.class
 com\revature\cmchicken\util\interfaces\Crudable.class
 com\revature\cmchicken\util\interfaces\Serviceable.class
 com\revature\cmchicken\util\interfaces\Authable.class
-com\revature\cmchicken\order\OrderDao.class
-com\revature\cmchicken\order\Order.class
+com\revature\cmchicken\menu_order\MenuOrderServices.class
+com\revature\cmchicken\menu_order\MenuOrderServlet.class
 com\revature\cmchicken\credit_card\CreditCardDao.class
 com\revature\cmchicken\customer\Customer.class
 com\revature\cmchicken\customer\CustomerDao.class
 com\revature\cmchicken\menu\Menu.class
-com\revature\cmchicken\order\OrderServlet.class
+com\revature\cmchicken\menu_order\MenuOrderDao.class
 com\revature\cmchicken\credit_card\CreditCard.class
 com\revature\cmchicken\util\ConnectionFactory.class
 com\revature\cmchicken\customer\CustomerServlet.class
@@ -21,9 +21,9 @@ com\revature\cmchicken\util\exceptions\ResourcePersistenceException.class
 com\revature\cmchicken\util\exceptions\AuthenticationException.class
 com\revature\cmchicken\credit_card\CreditCardServlets.class
 com\revature\cmchicken\util\web\servlets\AuthServlet.class
-com\revature\cmchicken\order\OrderServices.class
 com\revature\cmchicken\util\exceptions\InvalidRequestException.class
 com\revature\cmchicken\menu\MenuServices.class
+com\revature\cmchicken\menu_order\MenuOrder.class
 com\revature\cmchicken\customer\CustomerServices.class
 com\revature\cmchicken\menu\MenuServlets.class
 com\revature\cmchicken\util\HibernateUtil.class

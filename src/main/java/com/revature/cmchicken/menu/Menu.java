@@ -9,7 +9,7 @@ import javax.persistence.Table;
 public class Menu {
     @Id
     private String item_name;
-    private int cost;
+    private int price;
     private String protein;
     private boolean is_substitutable;
 
@@ -21,7 +21,7 @@ public class Menu {
     public String toString() {
         return "Menu{" +
                 "item_name='" + item_name + '\'' +
-                ", cost=" + cost +
+                ", price=" + price +
                 ", protein=" + protein +
                 ", is_substitutable=" + is_substitutable +
                 '}';
@@ -35,12 +35,12 @@ public class Menu {
         this.item_name = item_name;
     }
 
-    public int getCost() {
-        return cost;
+    public int getPrice() {
+        return price;
     }
 
-    public void setCost(int cost) {
-        this.cost = cost;
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     public String getProtein() {
@@ -51,7 +51,7 @@ public class Menu {
         this.protein = protein;
     }
 
-    public boolean getIs_substitutable() {
+    public boolean isIs_substitutable() {
         return is_substitutable;
     }
 

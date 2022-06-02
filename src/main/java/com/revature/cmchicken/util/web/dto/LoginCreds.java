@@ -3,11 +3,14 @@ package com.revature.cmchicken.util.web.dto;
 public class LoginCreds {
 
     private String username;
-    private String password;
+    private String cpassword;
 
     private boolean is_admin;
 
     // JACKSON REQUIRES A NO ARG CONSTRUCTOR
+    public LoginCreds(){
+
+    }
 
 
     public String getUsername() {
@@ -18,12 +21,12 @@ public class LoginCreds {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
+    public String getCpassword() {
+        return cpassword;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setCpassword(String cpassword) {
+        this.cpassword = cpassword;
     }
 
     public boolean isIs_admin() {
@@ -33,5 +36,4 @@ public class LoginCreds {
     public void setIs_admin(boolean is_admin) {
         this.is_admin = is_admin;
     }
-
 }

@@ -13,20 +13,20 @@ public class CreditCard {
     private int cvv;
     private String exp_date;
     private  int zip;
-    private int limit;
+    private int cc_limit;
     private String user_name;
 
     public CreditCard() {
     }
 
-    public CreditCard(String cc_number, String cc_name, int cvv, String exp_date, int zip, int limit, String user_name) {
+    public CreditCard(String cc_number, String cc_name, int cvv, String exp_date, int zip, int cc_limit, String user_name) {
         super();
         this.cc_number = cc_number;
         this.cc_name = cc_name;
         this.cvv = cvv;
         this.exp_date = exp_date;
         this.zip = zip;
-        this.limit = limit;
+        this.cc_limit = cc_limit;
         this.user_name = user_name;
     }
 
@@ -71,11 +71,11 @@ public class CreditCard {
     }
 
     public int getLimit() {
-        return limit;
+        return cc_limit;
     }
 
-    public void setLimit(int limit) {
-        this.limit = limit;
+    public void setLimit(int cc_limit) {
+        this.cc_limit = cc_limit;
     }
 
     public String getUser_name() {
@@ -93,7 +93,7 @@ public class CreditCard {
                 ", cvv='" + cvv + '\'' +
                 ", exp_date='" + exp_date + '\'' +
                 ", zip='" + zip + '\'' +
-                ", limit='" + limit + '\'' +
+                ", cc_limit='" + cc_limit + '\'' +
                 ", user_name='" + user_name + '\'' +
                 '}';
     }
