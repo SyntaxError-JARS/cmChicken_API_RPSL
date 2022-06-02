@@ -30,6 +30,20 @@ public class CreditCard {
         this.user_name = user_name;
     }
 
+
+
+    public String toString() {
+        return "CreditCard{" +
+                "cc_number='" + cc_number + '\'' +
+                ", cc_name='" + cc_name + '\'' +
+                ", cvv='" + cvv + '\'' +
+                ", exp_date='" + exp_date + '\'' +
+                ", zip='" + zip + '\'' +
+                ", cc_limit='" + cc_limit + '\'' +
+                ", user_name='" + user_name + '\'' +
+                '}';
+    }
+
     public String getCc_number() {
         return cc_number;
     }
@@ -70,11 +84,11 @@ public class CreditCard {
         this.zip = zip;
     }
 
-    public int getLimit() {
+    public int getCc_limit() {
         return cc_limit;
     }
 
-    public void setLimit(int cc_limit) {
+    public void setCc_limit(int cc_limit) {
         this.cc_limit = cc_limit;
     }
 
@@ -84,17 +98,5 @@ public class CreditCard {
 
     public void setUser_name(String user_name) {
         this.user_name = user_name;
-    }
-
-    public String toString() {
-        return "CreditCard{" +
-                "cc_number='" + cc_number + '\'' +
-                ", cc_name='" + cc_name + '\'' +
-                ", cvv='" + cvv + '\'' +
-                ", exp_date='" + exp_date + '\'' +
-                ", zip='" + zip + '\'' +
-                ", cc_limit='" + cc_limit + '\'' +
-                ", user_name='" + user_name + '\'' +
-                '}';
     }
 }
