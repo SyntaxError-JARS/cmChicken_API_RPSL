@@ -1,6 +1,7 @@
 package com.revature.cmchicken.customer;
 
 import com.revature.cmchicken.credit_card.CreditCardDao;
+import com.revature.cmchicken.menu.Menu;
 import com.revature.cmchicken.util.HibernateUtil;
 import com.revature.cmchicken.util.interfaces.Crudable;
 
@@ -107,11 +108,15 @@ public class CustomerDao implements Crudable <Customer> {
         try{
             Session session = HibernateUtil.getSession();
             Transaction transaction = session.beginTransaction();
-            Query query = session.createQuery("from Customer where username= :username and password= :password");
-            query.setParameter("username", username);
-            query.setParameter("password", password);
-            Customer customer = (Customer) query.uniqueResult();
+
+//            Query query = session.createQuery("from customer where username= :username and password= :password");
+//            query.setParameter("username", username);
+//            query.setParameter("password", password);
+            Customer customer = session.get(Customer.class, username);
             transaction.commit();
+            if (! customer.getPassword().equals(password) )
+                return null;
+
             return customer;
         } catch (HibernateException | IOException e){
             e.printStackTrace();
@@ -119,6 +124,7 @@ public class CustomerDao implements Crudable <Customer> {
         } finally {
             HibernateUtil.closeSession();
         }
+
     }
 
 

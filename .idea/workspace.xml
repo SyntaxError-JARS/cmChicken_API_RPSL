@@ -6,20 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="f6c33500-64c6-42bf-a9fb-a2e4c070a0d8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/credit_card/CreditCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/credit_card/CreditCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/menu/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/order/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/customer/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/customer/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/customer/CustomerDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/credit_card/CreditCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/credit_card/CreditCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/menu/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/menu/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/order/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/order/Order.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/hibernate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/credit_card/CreditCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/credit_card/CreditCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/menu/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/menu/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/order/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/order/Order.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/hibernate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/hibernate.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,14 +70,14 @@
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/karr1/OneDrive/Desktop/soyoung_lee_p1/cmChicken_API_RPSL",
-    "settings.editor.selected.configurable": "MavenSettings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/karr1/OneDrive/Desktop/soyoung_lee_p1/cmChicken_API_RPSL&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.revature.cmchicken.util.web.util" />

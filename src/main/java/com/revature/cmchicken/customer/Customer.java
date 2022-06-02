@@ -18,7 +18,7 @@ public class Customer {
     @JsonProperty(access=JsonProperty.Access.WRITE_ONLY)
     private String password;
     private double balance;
-    private int is_admin;
+    private boolean is_admin;
 
 
     // JACKSON REQUIRES A NO ARG CONSTRUCTOR
@@ -29,7 +29,7 @@ public class Customer {
         this.password = password;
     }
 
-    public Customer(String username, String fname, String lname, String password, double balance, int is_admin) {
+    public Customer(String username, String fname, String lname, String password, double balance, boolean is_admin) {
         super();
         this.username = username;
         this.fname = fname;
@@ -79,11 +79,11 @@ public class Customer {
         this.balance = balance;
     }
 
-    public int getIs_admin() {
+    public boolean getIs_admin() {
         return is_admin;
     }
 
-    public void setIs_admin(int is_admin) {
+    public void setIs_admin(boolean is_admin) {
         this.is_admin = is_admin;
     }
 
