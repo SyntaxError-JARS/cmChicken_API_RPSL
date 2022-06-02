@@ -111,7 +111,18 @@ public class MenuServlets extends HttpServlet {
         }
 
         String username = req.getParameter("id");
-        Menu authMenu = (Menu) req.getSession().getAttribute("authMenu");
+        try {
+            menuServices.delete(username);
+            resp.getWriter().write("Delete menu from the database");
+        } catch (ResourcePersistenceException e){
+            resp.getWriter().write(e.getMessage());
+            resp.setStatus(404);
+        } catch (Exception e){
+            resp.getWriter().write(e.getMessage());
+            resp.setStatus(500);
+        }
+
+       // Menu authMenu = (Menu) req.getSession().getAttribute("authMenu");
 
 
 //        if(!authMenuCard.getUsername().equals(username)){

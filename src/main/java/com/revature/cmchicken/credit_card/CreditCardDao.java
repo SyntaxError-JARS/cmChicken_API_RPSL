@@ -85,7 +85,8 @@ public class CreditCardDao implements Crudable<CreditCard> {
         try {
             Session session = HibernateUtil.getSession();
             Transaction transaction = session.beginTransaction();
-            session.remove(user_name);
+            CreditCard creditCard = session.load(CreditCard.class,user_name);
+            session.remove(creditCard);
             transaction.commit();
             return true;
         } catch (HibernateException | IOException e) {

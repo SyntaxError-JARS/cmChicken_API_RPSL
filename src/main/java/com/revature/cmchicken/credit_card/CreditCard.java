@@ -14,12 +14,12 @@ public class CreditCard {
     private String exp_date;
     private  int zip;
     private int cc_limit;
-    private String user_name;
+    private String customer_username;
 
     public CreditCard() {
     }
 
-    public CreditCard(String cc_number, String cc_name, int cvv, String exp_date, int zip, int cc_limit, String user_name) {
+    public CreditCard(String cc_number, String cc_name, int cvv, String exp_date, int zip, int cc_limit, String customer_username) {
         super();
         this.cc_number = cc_number;
         this.cc_name = cc_name;
@@ -27,7 +27,7 @@ public class CreditCard {
         this.exp_date = exp_date;
         this.zip = zip;
         this.cc_limit = cc_limit;
-        this.user_name = user_name;
+        this.customer_username = customer_username;
     }
 
 
@@ -40,7 +40,7 @@ public class CreditCard {
                 ", exp_date='" + exp_date + '\'' +
                 ", zip='" + zip + '\'' +
                 ", cc_limit='" + cc_limit + '\'' +
-                ", user_name='" + user_name + '\'' +
+                ", customer_username" + customer_username + '\'' +
                 '}';
     }
 
@@ -92,11 +92,11 @@ public class CreditCard {
         this.cc_limit = cc_limit;
     }
 
-    public String getUser_name() {
-        return user_name;
+    public String getCustomer_username() {
+        return customer_username;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setCustomer_username(String customer_username) {
+        this.customer_username = customer_username;
     }
 }

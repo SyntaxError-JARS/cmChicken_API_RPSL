@@ -107,7 +107,7 @@ public class CreditCardServlets extends HttpServlet {
         String menuItem = req.getParameter("creditCard");
 
         try {
-            creditCardServices.delete("username");
+            creditCardServices.delete(menuItem);
             resp.getWriter().write("Delete credit card from the database");
         } catch (ResourcePersistenceException e){
             resp.getWriter().write(e.getMessage());

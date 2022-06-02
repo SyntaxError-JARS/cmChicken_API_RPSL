@@ -71,7 +71,7 @@ public class CreditCardServices implements Serviceable<CreditCard> {
         if (newCreditCard.getExp_date() == null || newCreditCard.getExp_date().trim().equals(("")))return false;
         if (newCreditCard.getZip() == 0) return false;
         if (newCreditCard.getCc_limit() == 0) return false;
-        if (newCreditCard.getUser_name() == null || newCreditCard.getUser_name().trim().equals(("")))return false;
+        if (newCreditCard.getCustomer_username() == null || newCreditCard.getCustomer_username().trim().equals(("")))return false;
 
         return true;
     }
