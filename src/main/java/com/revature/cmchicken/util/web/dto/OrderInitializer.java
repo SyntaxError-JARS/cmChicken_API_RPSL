@@ -19,7 +19,6 @@ public class OrderInitializer {
         this.customer_username = customer_username;
     }
 
-
     public String getMenu_item() {
         return menu_item;
     }
@@ -28,11 +27,11 @@ public class OrderInitializer {
         this.menu_item = menu_item;
     }
 
-    public String getComment() {
+    public String getM_comment() {
         return m_comment;
     }
 
-    public void setComment(String m_comment) {
+    public void setM_comment(String m_comment) {
         this.m_comment = m_comment;
     }
 
@@ -58,9 +57,5 @@ public class OrderInitializer {
 
     public void setCustomer_username(String customer_username) {
         this.customer_username = customer_username;
-    }
-
-    public String getM_Comment() {
-        return m_comment;
     }
 }

@@ -5,22 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6c33500-64c6-42bf-a9fb-a2e4c070a0d8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/revature/cmchicken/util/HibernateUtilTestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/credit_card/CreditCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/credit_card/CreditCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/credit_card/CreditCardDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/credit_card/CreditCardDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/credit_card/CreditCardServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/credit_card/CreditCardServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/credit_card/CreditCardServlets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/credit_card/CreditCardServlets.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/menu/MenuServlets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/menu/MenuServlets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/customer/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/customer/CustomerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/customer/CustomerServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/customer/CustomerServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/customer/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/customer/CustomerServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/menu/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/menu_order/MenuOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/menu_order/MenuOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/menu_order/MenuOrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/menu_order/MenuOrderServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/util/web/dto/OrderInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/util/web/dto/OrderInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/util/web/util/ContextLoaderListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/util/web/util/ContextLoaderListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/credit_card/CreditCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/credit_card/CreditCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/credit_card/CreditCardDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/credit_card/CreditCardDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/credit_card/CreditCardServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/credit_card/CreditCardServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/credit_card/CreditCardServlets.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/credit_card/CreditCardServlets.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/customer/CustomerDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/customer/CustomerDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/customer/CustomerServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/customer/CustomerServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/customer/CustomerServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/customer/CustomerServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/menu/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/menu/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/menu_order/MenuOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/menu_order/MenuOrder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/menu_order/MenuOrderServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/menu_order/MenuOrderServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/util/web/dto/OrderInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/util/web/dto/OrderInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/util/web/util/ContextLoaderListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/util/web/util/ContextLoaderListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/credit_card/CreditCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/credit_card/CreditCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/credit_card/CreditCardDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/credit_card/CreditCardDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/credit_card/CreditCardServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/credit_card/CreditCardServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/credit_card/CreditCardServlets.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/credit_card/CreditCardServlets.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/customer/CustomerDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/customer/CustomerDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/customer/CustomerServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/customer/CustomerServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/customer/CustomerServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/customer/CustomerServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/menu/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/menu/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/menu_order/MenuOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/menu_order/MenuOrder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/menu_order/MenuOrderServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/menu_order/MenuOrderServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/util/web/dto/OrderInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/util/web/dto/OrderInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/util/web/util/ContextLoaderListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/util/web/util/ContextLoaderListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/hibernate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/hibernate.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
@@ -65,6 +82,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="29xPSUycbC6ePe2uVVqgdFaKDpu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -77,11 +97,15 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/karr1/OneDrive/Desktop/soyoung_lee_p1/cmChicken_API_RPSL&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/karr1/OneDrive/Desktop/soyoung_lee_p1/cmChicken_API_RPSL/src/test/java/com/revature/cmchicken/util&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\karr1\OneDrive\Desktop\soyoung_lee_p1\cmChicken_API_RPSL\src\test\java\com\revature\cmchicken\util" />
+      <recent name="C:\Users\karr1\OneDrive\Desktop\soyoung_lee_p1\cmChicken_API_RPSL\src" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.revature.cmchicken.util.web.util" />
       <recent name="com.revature.cmchicken.web.util" />
@@ -89,11 +113,44 @@
       <recent name="com.revature.cmchicken.util.web" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.revature.cmchicken.services" />
       <recent name="com.revature.cmchicken.util.web.dto" />
       <recent name="com.revature.cmchicken.util.web.servlets" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Maven.cmChicken [clean,install,tomcat7:deploy]">
+    <configuration name="ConnectionFactoryTestSuite.test_getConnection_givenProvidedCredentials_returnValidConnection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cmChicken" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revature.cmchicken.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.revature.cmchicken.util" />
+      <option name="MAIN_CLASS_NAME" value="com.revature.cmchicken.util.ConnectionFactoryTestSuite" />
+      <option name="METHOD_NAME" value="test_getConnection_givenProvidedCredentials_returnValidConnection" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HibernateUtilTestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cmChicken" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revature.cmchicken.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.revature.cmchicken.util" />
+      <option name="MAIN_CLASS_NAME" value="com.revature.cmchicken.util.HibernateUtilTestSuite" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="cmChicken [clean,install,tomcat7:deploy]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -121,6 +178,17 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="JUnit.ConnectionFactoryTestSuite.test_getConnection_givenProvidedCredentials_returnValidConnection" />
+      <item itemvalue="JUnit.HibernateUtilTestSuite" />
+      <item itemvalue="Maven.cmChicken [clean,install,tomcat7:deploy]" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.HibernateUtilTestSuite" />
+        <item itemvalue="JUnit.ConnectionFactoryTestSuite.test_getConnection_givenProvidedCredentials_returnValidConnection" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

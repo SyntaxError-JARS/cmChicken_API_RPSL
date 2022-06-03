@@ -1,7 +1,11 @@
 package com.revature.cmchicken.menu_order;
 
 
+import com.revature.cmchicken.customer.Customer;
+import com.revature.cmchicken.menu.Menu;
+
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "menu_order")
@@ -12,9 +16,10 @@ public class MenuOrder {
     @Column(name = "id")
     private int id;
 
-   // @ManyToOne // ???
-   // @JoinColumn(name = "menu_item", referencedColumnName = "item_name")
-    private String menu_item;
+    //private String menu_item;
+    @ManyToOne // ???
+    @JoinColumn(name = "menu_item", referencedColumnName = "item_name")
+    private Menu menu_item;
 
     private String m_comment;
 
@@ -22,25 +27,15 @@ public class MenuOrder {
 
     private String order_date;
 
-    //@ManyToOne // ???
-   // @JoinColumn(name = "customer_username", referencedColumnName = "username")
-    private String customer_username;
+
+    //private String customer_username;
+    @ManyToOne
+    @JoinColumn(name = "customer_username", referencedColumnName = "username")
+    private Customer customer_username;
 
 
     // JACKSON REQUIRES A NO ARG CONSTRUCTOR
     public MenuOrder() {
-    }
-
-    @Override
-    public String toString() {
-        return "Order{" +
-                "id=" + id +
-                ", menu_item='" + menu_item + '\'' +
-                ", m_comment ='" + m_comment + '\'' +
-                ", is_favorite=" + is_favorite +
-                ", order_date='" + order_date + '\'' +
-                ", customer_username='" + customer_username + '\'' +
-                '}';
     }
 
     public int getId() {
@@ -51,11 +46,11 @@ public class MenuOrder {
         this.id = id;
     }
 
-    public String getMenu_item() {
+    public Menu getMenu_item() {
         return menu_item;
     }
 
-    public void setMenu_item(String menu_item) {
+    public void setMenu_item(Menu menu_item) {
         this.menu_item = menu_item;
     }
 
@@ -83,11 +78,36 @@ public class MenuOrder {
         this.order_date = order_date;
     }
 
-    public String getCustomer_username() {
+    public Customer getCustomer_username() {
         return customer_username;
     }
 
-    public void setCustomer_username(String customer_username) {
+    public void setCustomer_username(Customer customer_username) {
         this.customer_username = customer_username;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof MenuOrder)) return false;
+        MenuOrder menuOrder = (MenuOrder) o;
+        return getId() == menuOrder.getId() && isIs_favorite() == menuOrder.isIs_favorite() && getMenu_item().equals(menuOrder.getMenu_item()) && getM_comment().equals(menuOrder.getM_comment()) && getOrder_date().equals(menuOrder.getOrder_date()) && getCustomer_username().equals(menuOrder.getCustomer_username());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getMenu_item(), getM_comment(), isIs_favorite(), getOrder_date(), getCustomer_username());
+    }
+
+    @Override
+    public String toString() {
+        return "MenuOrder{" +
+                "id=" + id +
+                ", menu_item=" + menu_item +
+                ", m_comment='" + m_comment + '\'' +
+                ", is_favorite=" + is_favorite +
+                ", order_date='" + order_date + '\'' +
+                ", customer_username=" + customer_username +
+                '}';
     }
 }

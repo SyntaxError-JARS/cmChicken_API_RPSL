@@ -26,3 +26,5 @@
 
 ### Mac OS ###
 .DS_Store
+
+src/test/java/com/revature/cmchicken/services/*

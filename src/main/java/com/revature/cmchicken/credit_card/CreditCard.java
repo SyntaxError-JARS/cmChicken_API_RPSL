@@ -1,8 +1,6 @@
 package com.revature.cmchicken.credit_card;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "credit_card")
@@ -14,6 +12,9 @@ public class CreditCard {
     private String exp_date;
     private  int zip;
     private int cc_limit;
+//    @ManyToOne // ???
+//    @JoinColumn(name = "customer_username", referencedColumnName = "username")
+    //private Customer customer_username;
     private String customer_username;
 
     public CreditCard() {

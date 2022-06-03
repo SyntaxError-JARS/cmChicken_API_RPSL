@@ -22,12 +22,14 @@ public class CustomerServices implements Serviceable<Customer> {
 
 
     public boolean validateUserNameNotUsed(String username){
+        System.out.println("CustomerServices::create() - Customer trying to be registered: " + username);
         return customerDao.checkUserName(username);
     }
 
     @Override
     public Customer create(Customer newCustomer) {
-        logger.info("Customer trying to be registered: " + newCustomer);
+        logger.info("CustomerServices::create() - Customer trying to be registered: " + newCustomer);
+        System.out.println("CustomerServices::create() - Customer trying to be registered: " + newCustomer.getUsername());
         if(!validateInput(newCustomer)) {
             throw new InvalidRequestException("User input was not validated, either empty String or null values");
         }
@@ -70,7 +72,12 @@ public class CustomerServices implements Serviceable<Customer> {
 
     @Override
     public boolean validateInput(Customer object) {
-        return false;
+        if(object == null) return false;
+        if(object.getFname() == null || object.getFname().trim().equals("")) return false;
+        if(object.getLname() == null || object.getLname().trim().equals("")) return false;
+        if(object.getUsername() == null || object.getUsername().trim().equals("")) return false;
+        if(object.getCpassword() == null || object.getLname().trim().equals("")) return false;
+        return true;
     }
 
     public Customer authenticateCustomer(String username, String password){

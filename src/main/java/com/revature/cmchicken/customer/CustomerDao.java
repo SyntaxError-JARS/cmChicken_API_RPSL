@@ -19,6 +19,7 @@ public class CustomerDao implements Crudable <Customer> {
 
     @Override
     public Customer create(Customer newCustomer) {
+        System.out.println(newCustomer);
         try {
             Session session = HibernateUtil.getSession();
             Transaction transaction = session.beginTransaction();
@@ -130,6 +131,7 @@ public class CustomerDao implements Crudable <Customer> {
 
 
     public boolean checkUserName(String username) {
+        System.out.println("CustomerDao::checkUserName() - customer username" + username);
 
         try {
             Session session = HibernateUtil.getSession();
@@ -138,6 +140,7 @@ public class CustomerDao implements Crudable <Customer> {
             query.setParameter("username", username);
             Customer customer = (Customer) query.uniqueResult();
             transaction.commit();
+            System.out.println("CustomerDao::checkUserName() - customer" + customer);
             if(customer == null) return false;
             return true;
         } catch (HibernateException | IOException e) {

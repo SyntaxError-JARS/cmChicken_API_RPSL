@@ -3,6 +3,7 @@ package com.revature.cmchicken.customer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 
+import com.revature.cmchicken.credit_card.CreditCard;
 import com.revature.cmchicken.util.exceptions.ResourcePersistenceException;
 
 import com.revature.cmchicken.util.interfaces.Authable;
@@ -83,6 +84,26 @@ public class CustomerServlet extends HttpServlet implements Authable {
         resp.getWriter().write(payload);
     }
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.addHeader("Access-Control-Allow-Origin", "*");
+        resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+        resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
+        Customer persistedCustomer;
+        try {
+            Customer customer = mapper.readValue(req.getInputStream(), Customer.class);
+            persistedCustomer = customerService.create(customer);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        String payload = mapper.writeValueAsString(persistedCustomer);
+
+        resp.getWriter().write("Persisted the provided Customer as show below \n");
+        resp.getWriter().write(payload);
+        resp.setStatus(201);
+    }
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -119,22 +140,22 @@ public class CustomerServlet extends HttpServlet implements Authable {
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
         if(!checkAuth(req,resp)) return;
-        if(req.getParameter("password") == null){
-            resp.getWriter().write("In order to delete, please provide your user password as a verification into the url with ?password=your@email.here");
+        if(req.getParameter("cpassword") == null){
+            resp.getWriter().write("In order to delete, please provide your user password as a verification into the url with ?cpassword=yourpassword");
             resp.setStatus(401);
             return;
         }
 
-        String email = req.getParameter("password");
+        String username = req.getParameter("username");
         Customer authCustomer = (Customer) req.getSession().getAttribute("authCustomer");
 
-        if(!authCustomer.getUsername().equals(email)){
+        if(!authCustomer.getUsername().equals(username)){
             resp.getWriter().write("password provided does not match the user name logged in, double check for confirmation of deletion");
             return;
         }
 
         try {
-            customerService.delete(email);
+            customerService.delete(username);
             resp.getWriter().write("Delete user from the database");
             req.getSession().invalidate();
         } catch (ResourcePersistenceException e){

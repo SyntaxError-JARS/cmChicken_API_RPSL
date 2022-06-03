@@ -47,6 +47,10 @@ public class MenuOrderServlet extends HttpServlet implements Authable {
         resp.addHeader("Access-Control-Allow-Origin", "*");
         resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
+
+        System.out.println("MenuOrderServlet::doGet()----let do get");
+
         if(req.getParameter("id") != null){
             MenuOrder menuOrder = menuOrderServices.readById(req.getParameter("id"));
             String payload = mapper.writeValueAsString(menuOrder);
@@ -72,11 +76,11 @@ public class MenuOrderServlet extends HttpServlet implements Authable {
             Customer customer = customerServices.readById(String.valueOf(initOrder.getCustomer_username()));
             Menu menu = menuServices.readById(initOrder.getMenu_item());
 
-            newMenuOrder.setMenu_item(initOrder.getMenu_item());
-            newMenuOrder.setM_comment(initOrder.getM_Comment());
+            newMenuOrder.setMenu_item(menu);
+            newMenuOrder.setM_comment(initOrder.getM_comment());
             newMenuOrder.setIs_favorite(initOrder.isIs_favorite());
             newMenuOrder.setOrder_date(initOrder.getOrder_date());
-            newMenuOrder.setCustomer_username(initOrder.getCustomer_username());
+            newMenuOrder.setCustomer_username(customer);
         }catch (Exception e){
             resp.getWriter().write(e.getMessage());
         }
