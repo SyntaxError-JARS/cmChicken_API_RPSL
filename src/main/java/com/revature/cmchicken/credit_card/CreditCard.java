@@ -14,7 +14,7 @@ public class CreditCard {
     private int cc_limit;
 //    @ManyToOne // ???
 //    @JoinColumn(name = "customer_username", referencedColumnName = "username")
-    //private Customer customer_username;
+//    private Customer customer_username;
     private String customer_username;
 
     public CreditCard() {
