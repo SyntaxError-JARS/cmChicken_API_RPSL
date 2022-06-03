@@ -38,7 +38,7 @@ public class MenuOrderDao implements Crudable<MenuOrder> {
         try {
             Session session = HibernateUtil.getSession();
             Transaction transaction = session.beginTransaction();
-            List<MenuOrder> menuOrderList = session.createQuery("FROM Menu_Order").list();
+            List<MenuOrder> menuOrderList = session.createQuery("FROM MenuOrder").list();
             transaction.commit();
             return menuOrderList;
         } catch (HibernateException | IOException e) {
@@ -54,7 +54,7 @@ public class MenuOrderDao implements Crudable<MenuOrder> {
             Session session = HibernateUtil.getSession();
             Transaction transaction = session.beginTransaction();
 
-            String sql = " FROM menu_order WHERE order_date = :order_date";
+            String sql = " FROM MenuOrder WHERE order_date = :order_date";
             Query query = session.createQuery(sql);
             query.setParameter("order_date", order_date);
             List<MenuOrder> menuOrderList = query.list();

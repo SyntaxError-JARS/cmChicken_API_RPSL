@@ -6,17 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f6c33500-64c6-42bf-a9fb-a2e4c070a0d8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/menu_order/MenuOrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/menu_order/MenuOrderServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/util/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/util/HibernateUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/menu_order/MenuOrderServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/menu_order/MenuOrderServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/util/HibernateUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/util/HibernateUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/menu_order/MenuOrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/menu_order/MenuOrderDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/menu_order/MenuOrderDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/menu_order/MenuOrderDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/menu_order/MenuOrderServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/menu_order/MenuOrderServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/util/HibernateUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/util/HibernateUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/hibernate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/hibernate.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/menu_order/MenuOrderDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/menu_order/MenuOrderDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
