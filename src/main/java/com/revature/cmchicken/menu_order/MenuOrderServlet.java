@@ -103,6 +103,7 @@ public class MenuOrderServlet extends HttpServlet implements Authable {
         resp.addHeader("Access-Control-Allow-Origin", "*");
         resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
         if(!checkAuth(req, resp)) return;
 
         MenuOrder menuOrderUpdate = mapper.readValue(req.getInputStream(), MenuOrder.class);

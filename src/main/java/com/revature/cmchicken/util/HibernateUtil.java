@@ -21,11 +21,28 @@ public class HibernateUtil {
     public static Session getSession() throws IOException {
         if(sessionFactory == null){
             Configuration configuration = new Configuration();
+
+            /* Azure doen't like Threads and loading resources via a ClassLoader*/
             Properties prop = new Properties();
             ClassLoader loader = Thread.currentThread().getContextClassLoader();
             prop.load(loader.getResourceAsStream("hibernate.properties"));
 
             configuration.setProperties(prop);
+
+            /* TODO: SET up AZURE App Service */
+
+//            String url = System.getenv("SQLAZURECONNSTR_CmProjectDB");
+//            String username = System.getenv("DBUSER");
+//            String password = System.getenv("DBPASS");
+//
+//            configuration.setProperty("hibernate.connection.url", url);
+//            configuration.setProperty("hibernate.connection.username", username);
+//            configuration.setProperty("hibernate.connection.password", password);
+//            configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.SQLServerDialect");
+//            configuration.setProperty("hibernate.connection.driver_class", "com.microsoft.sqlserver.jdbc.SQLServerDriver");
+//            configuration.setProperty("hibernate.show_sql", "true");
+//            configuration.setProperty("hibernate.hbm2ddl.auto", "update");
+
 
             configuration.addAnnotatedClass(Customer.class);
             configuration.addAnnotatedClass(Menu.class);
