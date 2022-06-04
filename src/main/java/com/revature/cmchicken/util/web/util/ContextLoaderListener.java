@@ -40,14 +40,14 @@ public class ContextLoaderListener implements ServletContextListener {
         // Instantiate and intialize the services with their dao dependency
         CustomerServices customerServices = new CustomerServices(customerDao);
         MenuServices menuServices = new MenuServices(menuDao);
-        CreditCardServices creditCardServices = new CreditCardServices(creditCardDao);
+        CreditCardServices creditCardServices = new CreditCardServices(creditCardDao, customerDao);
         MenuOrderServices menuOrderServices = new MenuOrderServices(menuOrderDao,customerDao, menuDao);
 
 
         AuthServlet authServlet = new AuthServlet(customerServices, mapper);
         CustomerServlet customerServlet = new CustomerServlet(customerServices, mapper);
         MenuServlets menuServlet = new MenuServlets(menuServices, mapper);
-        CreditCardServlets creditCardServlet = new CreditCardServlets(creditCardServices, mapper);
+        CreditCardServlets creditCardServlet = new CreditCardServlets(creditCardServices, customerServices,  mapper);
         MenuOrderServlet menuOrderServlet = new MenuOrderServlet(menuOrderServices, mapper, menuServices, customerServices);
 
         ServletContext context = sce.getServletContext();

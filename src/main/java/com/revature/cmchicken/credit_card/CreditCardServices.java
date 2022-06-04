@@ -1,5 +1,7 @@
 package com.revature.cmchicken.credit_card;
 
+
+import com.revature.cmchicken.customer.CustomerDao;
 import com.revature.cmchicken.util.exceptions.InvalidRequestException;
 import com.revature.cmchicken.util.exceptions.ResourcePersistenceException;
 import com.revature.cmchicken.util.interfaces.Serviceable;
@@ -11,14 +13,18 @@ import java.util.List;
 public class CreditCardServices implements Serviceable<CreditCard> {
 
     private CreditCardDao creditCardDao;
-    private Logger logger = Logger.getLogger();
-    public CreditCardServices(CreditCardDao creditCardDao) {this.creditCardDao = creditCardDao; }
 
+    private CustomerDao customerDao;
+
+    public CreditCardServices(CreditCardDao creditCardDao, CustomerDao customerDao) {
+        this.creditCardDao = creditCardDao;
+        this.customerDao = customerDao;
+    }
 
     @Override
     public CreditCard create(CreditCard newCreditCard) {
         System.out.println("CreditCard trying to be registered: " + newCreditCard);
-        logger.info("CreditCard trying to be registered: ");
+
 
         System.out.println("before issue?");
         CreditCard persistedCreditCard = creditCardDao.create(newCreditCard);
@@ -71,7 +77,7 @@ public class CreditCardServices implements Serviceable<CreditCard> {
         if (newCreditCard.getExp_date() == null || newCreditCard.getExp_date().trim().equals(("")))return false;
         if (newCreditCard.getZip() == 0) return false;
         if (newCreditCard.getCc_limit() == 0) return false;
-        if (newCreditCard.getCustomer_username() == null || newCreditCard.getCustomer_username().trim().equals(("")))return false;
+        if (newCreditCard.getCustomer_username() == null)return false;
 
         return true;
     }

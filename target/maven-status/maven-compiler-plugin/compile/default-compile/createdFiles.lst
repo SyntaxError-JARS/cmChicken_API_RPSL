@@ -1,5 +1,6 @@
 com\revature\cmchicken\credit_card\CreditCardServices.class
 com\revature\cmchicken\util\interfaces\Crudable.class
+com\revature\cmchicken\util\web\dto\CreditCardInitializer.class
 com\revature\cmchicken\util\interfaces\Serviceable.class
 com\revature\cmchicken\util\interfaces\Authable.class
 com\revature\cmchicken\menu_order\MenuOrderServices.class

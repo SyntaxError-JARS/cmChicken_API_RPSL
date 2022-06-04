@@ -1,6 +1,8 @@
 package com.revature.cmchicken.credit_card;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.revature.cmchicken.customer.Customer;
+import com.revature.cmchicken.customer.CustomerServices;
 import com.revature.cmchicken.util.exceptions.ResourcePersistenceException;
 
 import javax.servlet.ServletException;
@@ -10,17 +12,22 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+import com.revature.cmchicken.util.web.dto.CreditCardInitializer;
+
+
 public class CreditCardServlets extends HttpServlet {
 
     private final CreditCardServices creditCardServices;
+
+    private final CustomerServices customerServices;
     private final ObjectMapper mapper;
 
-    public CreditCardServlets(CreditCardServices creditCardServices, ObjectMapper mapper) {
+
+    public CreditCardServlets(CreditCardServices creditCardServices, CustomerServices customerServices, ObjectMapper mapper) {
         this.creditCardServices = creditCardServices;
+        this.customerServices = customerServices;
         this.mapper = mapper;
     }
-
-
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -61,17 +68,30 @@ public class CreditCardServlets extends HttpServlet {
         resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
-        CreditCard persistedCreditCard;
-        try {
-            CreditCard creditCard = mapper.readValue(req.getInputStream(), CreditCard.class);
-            persistedCreditCard = creditCardServices.create(creditCard);
+        CreditCard newCreditCard = new CreditCard();
 
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        CreditCardInitializer initCreditCard = mapper.readValue(req.getInputStream(), CreditCardInitializer.class);
+        try {
+            Customer customer = customerServices.readById(String.valueOf(initCreditCard.getCustomer_username()));
+
+            newCreditCard.setCc_number(initCreditCard.getCc_number());
+            newCreditCard.setCc_name(initCreditCard.getCc_name());
+            newCreditCard.setCvv(initCreditCard.getCvv());
+            newCreditCard.setExp_date(initCreditCard.getExp_date());
+            newCreditCard.setZip(initCreditCard.getZip());
+            newCreditCard.setCc_limit(initCreditCard.getCc_limit());
+            newCreditCard.setCustomer_username(customer);
+
+        } catch (Exception e){
+            resp.getWriter().write(e.getMessage());
         }
+
+        System.out.println(newCreditCard);
+        CreditCard persistedCreditCard = creditCardServices.create(newCreditCard);
+        // Mapping from Java Object (CreditCard) to JSON
         String payload = mapper.writeValueAsString(persistedCreditCard);
 
-        resp.getWriter().write("Persisted the provided CreditCard as show below \n");
+        resp.getWriter().write("Persisted the provided Credit Card as show below \n");
         resp.getWriter().write(payload);
         resp.setStatus(201);
     }
