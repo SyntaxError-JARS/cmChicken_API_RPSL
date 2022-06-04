@@ -14,7 +14,7 @@ public class CreditCard {
     private int cvv;
     private String exp_date;
     private  int zip;
-    private int cc_limit;
+    private double cc_limit;
     @ManyToOne // ???
     @JoinColumn(name = "customer_username", referencedColumnName = "username")
     private Customer customer_username;
@@ -23,7 +23,7 @@ public class CreditCard {
     public CreditCard() {
     }
 
-    public CreditCard(String cc_number, String cc_name, int cvv, String exp_date, int zip, int cc_limit, Customer customer_username) {
+    public CreditCard(String cc_number, String cc_name, int cvv, String exp_date, int zip, double cc_limit, Customer customer_username) {
         this.cc_number = cc_number;
         this.cc_name = cc_name;
         this.cvv = cvv;
@@ -86,11 +86,11 @@ public class CreditCard {
         this.zip = zip;
     }
 
-    public int getCc_limit() {
+    public double getCc_limit() {
         return cc_limit;
     }
 
-    public void setCc_limit(int cc_limit) {
+    public void setCc_limit(double cc_limit) {
         this.cc_limit = cc_limit;
     }
 

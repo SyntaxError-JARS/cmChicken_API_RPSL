@@ -9,13 +9,20 @@ import javax.persistence.Table;
 public class Menu {
     @Id
     private String item_name;
-    private int price;
+    private double price;
     private String protein;
     private boolean is_substitutable;
 
 
     public Menu() {
 
+    }
+
+    public Menu(String item_name, double price, String protein, boolean is_substitutable) {
+        this.item_name = item_name;
+        this.price = price;
+        this.protein = protein;
+        this.is_substitutable = is_substitutable;
     }
 
     @Override
@@ -36,11 +43,11 @@ public class Menu {
         this.item_name = item_name;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
