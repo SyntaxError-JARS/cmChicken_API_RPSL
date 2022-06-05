@@ -2,6 +2,7 @@ package com.revature.cmchicken.credit_card;
 
 
 import com.revature.cmchicken.customer.CustomerDao;
+import com.revature.cmchicken.menu_order.MenuOrder;
 import com.revature.cmchicken.util.exceptions.InvalidRequestException;
 import com.revature.cmchicken.util.exceptions.ResourcePersistenceException;
 import com.revature.cmchicken.util.interfaces.Serviceable;
@@ -43,6 +44,13 @@ public class CreditCardServices implements Serviceable<CreditCard> {
         List<CreditCard> creditCard = creditCardDao.findAll();
         return creditCard;
     }
+
+
+    public List<CreditCard> readAll(String customer_username ) throws IOException {
+        List<CreditCard> creditCard = creditCardDao.findAllByUsername(customer_username);
+        return creditCard;
+    }
+
 
     @Override
     public CreditCard readById(String user_name) {

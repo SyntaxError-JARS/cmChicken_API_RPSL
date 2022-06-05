@@ -49,14 +49,14 @@ public class CreditCardServlets extends HttpServlet {
         }
 
         if(req.getParameter("customer_username") != null) {
-            CreditCard creditCard;
+            List<CreditCard> creditCards;
             try {
-                creditCard = creditCardServices.readByCustomerUsername(req.getParameter("customer_username")); // EVERY PARAMETER RETURN FROM A URL IS A STRING
+                creditCards = creditCardServices.readAll(req.getParameter("customer_username")); // EVERY PARAMETER RETURN FROM A URL IS A STRING
 
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
-            String payload = mapper.writeValueAsString(creditCard);
+            String payload = mapper.writeValueAsString(creditCards);
             resp.getWriter().write(payload);
             return;
         }
@@ -131,16 +131,16 @@ public class CreditCardServlets extends HttpServlet {
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 //TODO: implement checkAuth
         //if(!checkAuth(req, resp)) return;
-        if(req.getParameter("creditCard") == null){
+        if(req.getParameter("cc_number") == null){
 
             resp.getWriter().write("Sample output");
             resp.setStatus(401);
             return;
         }
-        String menuItem = req.getParameter("creditCard");
+        CreditCard = req.getParameter("cc_number");
 
         try {
-            creditCardServices.delete(menuItem);
+            creditCardServices.delete(cc_number);
             resp.getWriter().write("Delete credit card from the database");
         } catch (ResourcePersistenceException e){
             resp.getWriter().write(e.getMessage());

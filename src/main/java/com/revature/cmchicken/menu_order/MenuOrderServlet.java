@@ -58,6 +58,27 @@ public class MenuOrderServlet extends HttpServlet implements Authable {
             return;
         }
 
+        if(req.getParameter("customer_username") != null && req.getParameter("order_date") != null){
+            List<MenuOrder> menuOrderList = menuOrderServices.readAll(req.getParameter("customer_username"), req.getParameter("order_date"));
+            String payload = mapper.writeValueAsString(menuOrderList);
+            resp.getWriter().write(payload);
+            return;
+        }
+
+        if(req.getParameter("order_date") != null){
+            List<MenuOrder> menuOrderList = menuOrderServices.readAll(req.getParameter("order_date"));
+            String payload = mapper.writeValueAsString(menuOrderList);
+            resp.getWriter().write(payload);
+            return;
+        }
+
+        if(req.getParameter("customer_username") != null){
+            List<MenuOrder> menuOrderList = menuOrderServices.readAllByCustomer(req.getParameter("customer_username"));
+            String payload = mapper.writeValueAsString(menuOrderList);
+            resp.getWriter().write(payload);
+            return;
+        }
+
         List<MenuOrder> menuOrderList = menuOrderServices.readAll();
         String payload = mapper.writeValueAsString(menuOrderList);
 

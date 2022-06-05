@@ -69,6 +69,90 @@ public class MenuOrderDao implements Crudable<MenuOrder> {
         }
     }
 
+    public List<MenuOrder> findAllByCustomer(String customer_username)  {
+        try {
+            Session session = HibernateUtil.getSession();
+            Transaction transaction = session.beginTransaction();
+
+            String sql = " FROM MenuOrder WHERE customer_username = :customer_username";
+            Query query = session.createQuery(sql);
+            query.setParameter("customer_username", customer_username);
+            List<MenuOrder> menuOrderList = query.list();
+
+            transaction.commit();
+            return menuOrderList;
+        } catch (HibernateException | IOException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            HibernateUtil.closeSession();
+        }
+    }
+
+
+    public List<MenuOrder> findAllByDate(String order_date)  {
+        try {
+            Session session = HibernateUtil.getSession();
+            Transaction transaction = session.beginTransaction();
+
+            String sql = " FROM MenuOrder WHERE order_date = :order_date";
+            Query query = session.createQuery(sql);
+            query.setParameter("order_date", order_date);
+            List<MenuOrder> menuOrderList = query.list();
+
+            transaction.commit();
+            return menuOrderList;
+        } catch (HibernateException | IOException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            HibernateUtil.closeSession();
+        }
+    }
+
+
+    public List<MenuOrder> findAllByMenu(String menu_item)  {
+        try {
+            Session session = HibernateUtil.getSession();
+            Transaction transaction = session.beginTransaction();
+
+            String sql = " FROM MenuOrder WHERE menu_item = :menu_item";
+            Query query = session.createQuery(sql);
+            query.setParameter("menu_item", menu_item);
+            List<MenuOrder> menuOrderList = query.list();
+
+            transaction.commit();
+            return menuOrderList;
+        } catch (HibernateException | IOException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            HibernateUtil.closeSession();
+        }
+    }
+
+
+    public List<MenuOrder> findAll(String customer_username, String order_date)  {
+        try {
+            Session session = HibernateUtil.getSession();
+            Transaction transaction = session.beginTransaction();
+
+            String sql = " FROM MenuOrder WHERE customer_username = :customer_username and order_date = :order_date";
+            Query query = session.createQuery(sql);
+            query.setParameter("customer_username", customer_username);
+            query.setParameter("order_date", order_date);
+            List<MenuOrder> menuOrderList = query.list();
+
+            transaction.commit();
+            return menuOrderList;
+        } catch (HibernateException | IOException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            HibernateUtil.closeSession();
+        }
+    }
+
     @Override
     public MenuOrder findById(String id) {
         try {

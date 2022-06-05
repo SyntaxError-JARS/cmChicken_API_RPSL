@@ -1,5 +1,6 @@
 package com.revature.cmchicken.menu_order;
 
+import com.revature.cmchicken.credit_card.CreditCard;
 import com.revature.cmchicken.customer.CustomerDao;
 import com.revature.cmchicken.menu.MenuDao;
 
@@ -43,6 +44,15 @@ public class MenuOrderServices implements Serviceable<MenuOrder> {
     public List<MenuOrder> readAll(String order_date){
         return menuOrderDao.findAll(order_date);
     }
+
+    public List<MenuOrder> readAll(String customer_username, String order_date){
+        return menuOrderDao.findAll(customer_username, order_date);
+    }
+
+    public List<MenuOrder> readAllByCustomer(String customer_username){
+        return menuOrderDao.findAllByCustomer(customer_username);
+    }
+
 
     @Override
     public MenuOrder readById(String id) {

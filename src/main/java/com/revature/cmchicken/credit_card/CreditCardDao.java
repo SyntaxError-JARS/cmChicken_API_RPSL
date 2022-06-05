@@ -1,10 +1,12 @@
 package com.revature.cmchicken.credit_card;
 
+import com.revature.cmchicken.menu_order.MenuOrder;
 import com.revature.cmchicken.util.HibernateUtil;
 import com.revature.cmchicken.util.interfaces.Crudable;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -41,6 +43,46 @@ public class CreditCardDao implements Crudable<CreditCard> {
         } catch (HibernateException | IOException e) {
             e.printStackTrace();
         return null;
+        } finally {
+            HibernateUtil.closeSession();
+        }
+    }
+
+    public List<CreditCard> findAllByUsername(String customer_username)  {
+        try {
+            Session session = HibernateUtil.getSession();
+            Transaction transaction = session.beginTransaction();
+
+            String sql = " FROM CreditCard WHERE customer_username = :customer_username";
+            Query query = session.createQuery(sql);
+            query.setParameter("customer_username", customer_username);
+            List<CreditCard> creditCardList = query.list();
+
+            transaction.commit();
+            return creditCardList;
+        } catch (HibernateException | IOException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            HibernateUtil.closeSession();
+        }
+    }
+
+    public List<CreditCard> findAllByDate(String order_date)  {
+        try {
+            Session session = HibernateUtil.getSession();
+            Transaction transaction = session.beginTransaction();
+
+            String sql = " FROM CreditCard WHERE order_date = :order_date";
+            Query query = session.createQuery(sql);
+            query.setParameter("order_date", order_date);
+            List<CreditCard> creditCardList = query.list();
+
+            transaction.commit();
+            return creditCardList;
+        } catch (HibernateException | IOException e) {
+            e.printStackTrace();
+            return null;
         } finally {
             HibernateUtil.closeSession();
         }
