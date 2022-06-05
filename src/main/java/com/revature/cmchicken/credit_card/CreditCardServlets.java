@@ -137,7 +137,7 @@ public class CreditCardServlets extends HttpServlet {
             resp.setStatus(401);
             return;
         }
-        CreditCard = req.getParameter("cc_number");
+        String cc_number = req.getParameter("cc_number");
 
         try {
             creditCardServices.delete(cc_number);
