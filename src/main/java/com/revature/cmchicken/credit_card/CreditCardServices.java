@@ -50,6 +50,11 @@ public class CreditCardServices implements Serviceable<CreditCard> {
         return creditCard;
     }
 
+    public CreditCard readByCustomerUsername(String customer_username) {
+        CreditCard creditCard = creditCardDao.findById(customer_username);
+        return creditCard;
+    }
+
     @Override
     public CreditCard update(CreditCard updatedCreditCard) {
         if(!creditCardDao.update((updatedCreditCard))){

@@ -1,6 +1,7 @@
 package com.revature.cmchicken.menu;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.revature.cmchicken.customer.Customer;
 import com.revature.cmchicken.util.exceptions.InvalidRequestException;
 import com.revature.cmchicken.util.exceptions.ResourcePersistenceException;
 
@@ -10,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+
+import static com.revature.cmchicken.util.interfaces.Authable.checkAuth;
 
 public class MenuServlets extends HttpServlet {
     private final MenuServices menuServices;
@@ -36,15 +39,15 @@ public class MenuServlets extends HttpServlet {
         resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
-        if(req.getParameter("id") != null && req.getParameter("email") != null){
-            resp.getWriter().write("Hey you have the follow id and email " + req.getParameter("id") + " " + req.getParameter("email") );
+        if(req.getParameter("username") != null && req.getParameter("password") != null){
+            resp.getWriter().write("Hey you have the follow user name and password " + req.getParameter("username") + " " + req.getParameter("password") );
             return;
         }
 
-        if(req.getParameter("id") != null){
+        if(req.getParameter("item_name") != null){
             Menu menu;
             try {
-                menu = menuServices.readById(req.getParameter("id")); // EVERY PARAMETER RETURN FROM A URL IS A STRING
+                menu = menuServices.readById(req.getParameter("item_name")); // EVERY PARAMETER RETURN FROM A URL IS A STRING
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
@@ -65,6 +68,15 @@ public class MenuServlets extends HttpServlet {
         resp.addHeader("Access-Control-Allow-Origin", "*");
         resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
+        if(!checkAuth(req, resp)) return;
+        Customer authCustomer = (Customer) req.getSession().getAttribute("authCustomer");
+        System.out.println("is admin: " + authCustomer.isIs_admin() );
+        if(!authCustomer.isIs_admin()) {
+            resp.getWriter().write("In order to insert a menu, you supposed to be admin");
+            resp.setStatus(401);
+            return;
+        }
 
         Menu persistedMenu;
         try {
@@ -87,7 +99,16 @@ public class MenuServlets extends HttpServlet {
         resp.addHeader("Access-Control-Allow-Origin", "*");
         resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-        //if(!checkAuth(req, resp)) return;
+
+        if(!checkAuth(req, resp)) return;
+        Customer authCustomer = (Customer) req.getSession().getAttribute("authCustomer");
+        System.out.println("is admin: " + authCustomer.isIs_admin() );
+        if(!authCustomer.isIs_admin()) {
+            resp.getWriter().write("In order to delete a menu, you supposed to be admin");
+            resp.setStatus(401);
+            return;
+        }
+
 
         Menu menuUpdate = mapper.readValue(req.getInputStream(), Menu.class);
         Menu updatedMenuItem = menuServices.update(menuUpdate);
@@ -103,17 +124,27 @@ public class MenuServlets extends HttpServlet {
         resp.addHeader("Access-Control-Allow-Origin", "*");
         resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-        //if(!checkAuth(req,resp)) return;
-        if (req.getParameter("id") == null) {
-            resp.getWriter().write("In order to delete, please provide your user id as a verification into the url with ?id=your@id.here");
+
+        if(!checkAuth(req,resp)) return;
+        Customer authCustomer = (Customer) req.getSession().getAttribute("authCustomer");
+
+        if (req.getParameter("item_name") == null) {
+            resp.getWriter().write("In order to delete, please provide your item_name as a verification into the url with ?item_name=put here item name");
+            resp.setStatus(401);
+            return;
+        }
+System.out.println("item name: " + req.getParameter("item_name"));
+        System.out.println("is admin: " + authCustomer.isIs_admin() );
+        if(!authCustomer.isIs_admin()) {
+            resp.getWriter().write("In order to delete a menu, you supposed to be admin");
             resp.setStatus(401);
             return;
         }
 
-        String username = req.getParameter("id");
+        String item_name = req.getParameter("item_name");
         try {
-            menuServices.delete(username);
-            resp.getWriter().write("Delete menu from the database");
+            menuServices.delete(item_name);
+            resp.getWriter().write("Delete a menu from the database");
         } catch (ResourcePersistenceException e){
             resp.getWriter().write(e.getMessage());
             resp.setStatus(404);
@@ -121,6 +152,7 @@ public class MenuServlets extends HttpServlet {
             resp.getWriter().write(e.getMessage());
             resp.setStatus(500);
         }
+
 
        // Menu authMenu = (Menu) req.getSession().getAttribute("authMenu");
 

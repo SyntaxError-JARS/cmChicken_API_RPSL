@@ -35,10 +35,23 @@ public class CreditCardServlets extends HttpServlet {
         resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
-        if(req.getParameter("id") != null){
+        if(req.getParameter("cc_number") != null){
             CreditCard creditCard;
             try {
-                creditCard = creditCardServices.readById(req.getParameter("id")); // EVERY PARAMETER RETURN FROM A URL IS A STRING
+                creditCard = creditCardServices.readById(req.getParameter("cc_number")); // EVERY PARAMETER RETURN FROM A URL IS A STRING
+
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+            String payload = mapper.writeValueAsString(creditCard);
+            resp.getWriter().write(payload);
+            return;
+        }
+
+        if(req.getParameter("customer_username") != null) {
+            CreditCard creditCard;
+            try {
+                creditCard = creditCardServices.readByCustomerUsername(req.getParameter("customer_username")); // EVERY PARAMETER RETURN FROM A URL IS A STRING
 
             } catch (Exception e) {
                 throw new RuntimeException(e);

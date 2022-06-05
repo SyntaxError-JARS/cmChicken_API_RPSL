@@ -6,7 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="f6c33500-64c6-42bf-a9fb-a2e4c070a0d8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/credit_card/CreditCardServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/credit_card/CreditCardServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/credit_card/CreditCardServlets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/credit_card/CreditCardServlets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/menu/MenuDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/menu/MenuDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/menu/MenuServlets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/cmchicken/menu/MenuServlets.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/credit_card/CreditCardServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/credit_card/CreditCardServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/credit_card/CreditCardServlets.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/credit_card/CreditCardServlets.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/menu/MenuServlets.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/cmchicken/menu/MenuServlets.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/cmChicken-script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/cmChicken-script.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/credit_card/CreditCardServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/credit_card/CreditCardServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/credit_card/CreditCardServlets.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/credit_card/CreditCardServlets.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/menu/MenuDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/menu/MenuDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/menu/MenuServlets.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/com/revature/cmchicken/menu/MenuServlets.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/hibernate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/cmChicken-1.0-SNAPSHOT/WEB-INF/classes/hibernate.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
