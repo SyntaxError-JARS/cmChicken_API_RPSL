@@ -51,27 +51,27 @@ public class MenuOrderServlet extends HttpServlet implements Authable {
 
         System.out.println("MenuOrderServlet::doGet()----let do get");
 
-        if(req.getParameter("id") != null){
-            MenuOrder menuOrder = menuOrderServices.readById(req.getParameter("id"));
-            String payload = mapper.writeValueAsString(menuOrder);
-            resp.getWriter().write(payload);
-            return;
-        }
-
         if(req.getParameter("customer_username") != null && req.getParameter("order_date") != null){
             List<MenuOrder> menuOrderList = menuOrderServices.readAll(req.getParameter("customer_username"), req.getParameter("order_date"));
             String payload = mapper.writeValueAsString(menuOrderList);
             resp.getWriter().write(payload);
             return;
         }
-
+        System.out.println("----------------------------------------1");
+        if(req.getParameter("id") != null){
+            MenuOrder menuOrder = menuOrderServices.readById(req.getParameter("id"));
+            String payload = mapper.writeValueAsString(menuOrder);
+            resp.getWriter().write(payload);
+            return;
+        }
+        System.out.println("----------------------------------------2");
         if(req.getParameter("order_date") != null){
             List<MenuOrder> menuOrderList = menuOrderServices.readAll(req.getParameter("order_date"));
             String payload = mapper.writeValueAsString(menuOrderList);
             resp.getWriter().write(payload);
             return;
         }
-
+        System.out.println("----------------------------------------3");
         if(req.getParameter("customer_username") != null){
             List<MenuOrder> menuOrderList = menuOrderServices.readAllByCustomer(req.getParameter("customer_username"));
             String payload = mapper.writeValueAsString(menuOrderList);
@@ -93,9 +93,12 @@ public class MenuOrderServlet extends HttpServlet implements Authable {
 
         MenuOrder newMenuOrder = new MenuOrder();
         OrderInitializer initOrder = mapper.readValue(req.getInputStream(), OrderInitializer.class); // from JSON to Java Object (Order)
+        System.out.println("--------doPost():: initOrder" + initOrder);
+        Customer customer = null;
         try{
-            Customer customer = customerServices.readById(String.valueOf(initOrder.getCustomer_username()));
+            customer = customerServices.readById(String.valueOf(initOrder.getCustomer_username()));
             Menu menu = menuServices.readById(initOrder.getMenu_item());
+            customer.setBalance(customer.getBalance() + menu.getPrice());
 
             newMenuOrder.setMenu_item(menu);
             newMenuOrder.setM_comment(initOrder.getM_comment());
@@ -108,6 +111,8 @@ public class MenuOrderServlet extends HttpServlet implements Authable {
 
         System.out.println(newMenuOrder);
         MenuOrder persistedMenuOrder = menuOrderServices.create(newMenuOrder);
+        Customer persistedCustomer = customerServices.update(customer);
+
 
         String payload = mapper.writeValueAsString(persistedMenuOrder); // Mapping from Java Object (Order) to JSON
 

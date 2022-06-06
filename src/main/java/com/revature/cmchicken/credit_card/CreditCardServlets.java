@@ -82,10 +82,11 @@ public class CreditCardServlets extends HttpServlet {
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
         CreditCard newCreditCard = new CreditCard();
+        Customer customer =null;
 
         CreditCardInitializer initCreditCard = mapper.readValue(req.getInputStream(), CreditCardInitializer.class);
         try {
-            Customer customer = customerServices.readById(String.valueOf(initCreditCard.getCustomer_username()));
+            customer = customerServices.readById(String.valueOf(initCreditCard.getCustomer_username()));
 
             newCreditCard.setCc_number(initCreditCard.getCc_number());
             newCreditCard.setCc_name(initCreditCard.getCc_name());
@@ -95,12 +96,23 @@ public class CreditCardServlets extends HttpServlet {
             newCreditCard.setCc_limit(initCreditCard.getCc_limit());
             newCreditCard.setCustomer_username(customer);
 
+            double balance = customer.getBalance();
+
+            if(balance > initCreditCard.getCc_limit()) {
+                resp.getWriter().write("need more money");
+                resp.setStatus(401);
+                return;
+            }
+
+            if(balance > 0) customer.setBalance(0);
+
         } catch (Exception e){
             resp.getWriter().write(e.getMessage());
         }
 
         System.out.println(newCreditCard);
         CreditCard persistedCreditCard = creditCardServices.create(newCreditCard);
+        Customer persistedCustomer = customerServices.update(customer);
         // Mapping from Java Object (CreditCard) to JSON
         String payload = mapper.writeValueAsString(persistedCreditCard);
 

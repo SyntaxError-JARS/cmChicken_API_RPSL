@@ -139,16 +139,16 @@ public class CustomerServlet extends HttpServlet implements Authable {
         resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
-        if(!checkAuth(req,resp)) return;
-        if(req.getParameter("cpassword") == null){
-            resp.getWriter().write("In order to delete, please provide your user password as a verification into the url with ?cpassword=yourpassword");
-            resp.setStatus(401);
-            return;
-        }
+//        if(!checkAuth(req,resp)) return;
+//        if(req.getParameter("cpassword") == null){
+//            resp.getWriter().write("In order to delete, please provide your user password as a verification into the url with ?cpassword=yourpassword");
+//            resp.setStatus(401);
+//            return;
+//        }
 
         String username = req.getParameter("username");
         Customer authCustomer = (Customer) req.getSession().getAttribute("authCustomer");
-
+        System.out.println("doDelete()::username-----------------------" + username);
         if(!authCustomer.getUsername().equals(username)){
             resp.getWriter().write("password provided does not match the user name logged in, double check for confirmation of deletion");
             return;
