@@ -92,6 +92,7 @@ public class MenuServlets extends HttpServlet {
         Menu persistedMenu;
         try {
             Menu menu = mapper.readValue(req.getInputStream(), Menu.class);
+            System.out.println(" Menu ===================" + menu );
             persistedMenu = menuServices.create(menu);
         } catch (InvalidRequestException e){
             resp.getWriter().write(e.getMessage());
@@ -111,9 +112,9 @@ public class MenuServlets extends HttpServlet {
         resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
-        if(!checkAuth(req, resp)) return;
-        Customer authCustomer = (Customer) req.getSession().getAttribute("authCustomer");
-        System.out.println("is admin: " + authCustomer.isIs_admin() );
+//        if(!checkAuth(req, resp)) return;
+//        Customer authCustomer = (Customer) req.getSession().getAttribute("authCustomer");
+//        System.out.println("is admin: " + authCustomer.isIs_admin() );
 //        if(!authCustomer.isIs_admin()) {
 //            resp.getWriter().write("In order to delete a menu, you supposed to be admin");
 //            resp.setStatus(401);
@@ -139,20 +140,21 @@ public class MenuServlets extends HttpServlet {
         if(!checkAuth(req,resp)) return;
         Customer authCustomer = (Customer) req.getSession().getAttribute("authCustomer");
 
-        if (req.getParameter("item_name") == null && req.getParameter("id") == null) {
-            resp.getWriter().write("In order to delete, please provide your item_name as a verification into the url with ?item_name=put here item name");
-            resp.setStatus(401);
-            return;
-        }
-System.out.println("item name: " + req.getParameter("item_name"));
-        System.out.println("is admin: " + authCustomer.isIs_admin() );
+//        if (req.getParameter("item_name") == null && req.getParameter("id") == null) {
+//            resp.getWriter().write("In order to delete, please provide your item_name as a verification into the url with ?item_name=put here item name");
+//            resp.setStatus(401);
+//            return;
+//        }
+//System.out.println("item name: " + req.getParameter("item_name"));
+//        System.out.println("is admin: " + authCustomer.isIs_admin() );
 //        if(!authCustomer.isIs_admin()) {
 //            resp.getWriter().write("In order to delete a menu, you supposed to be admin");
 //            resp.setStatus(401);
 //            return;
 //        }
 
-        String item_name = req.getParameter("item_name");
+        //String item_name = req.getParameter("item_name");
+        String item_name = req.getParameter("id");
         try {
             menuServices.delete(item_name);
             resp.getWriter().write("Delete a menu from the database");
