@@ -28,12 +28,6 @@ My CM Chicken app was developed for a small restaurant that is looking to help s
 -   [ ] View past orders by date
 -   [ ] Pay off your balance with your credit card
 
-## Optional User Stories for Customer:
-
--   [ ] Quickly reorder all orders on a specific date
--   [ ] Pay for a friends order
--   [ ] Filter menu by protein
-
 ## Required Challenge:
 
 In this project, you're presented with the challenge to learn and implement the use of Hibernate an ORM for java. Below are resources to help with understanding how to leverage hibernate in your project. Please talk with your partner and research as soon as possible. Make sure to ask questions and leverage any tool you can.
