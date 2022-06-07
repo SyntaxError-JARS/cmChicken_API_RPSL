@@ -51,12 +51,6 @@ public class MenuOrderServlet extends HttpServlet implements Authable {
 
         System.out.println("MenuOrderServlet::doGet()----let do get");
 
-        if(req.getParameter("customer_username") != null && req.getParameter("order_date") != null){
-            List<MenuOrder> menuOrderList = menuOrderServices.readAll(req.getParameter("customer_username"), req.getParameter("order_date"));
-            String payload = mapper.writeValueAsString(menuOrderList);
-            resp.getWriter().write(payload);
-            return;
-        }
         System.out.println("----------------------------------------1");
         if(req.getParameter("id") != null){
             MenuOrder menuOrder = menuOrderServices.readById(req.getParameter("id"));
@@ -94,7 +88,7 @@ public class MenuOrderServlet extends HttpServlet implements Authable {
         MenuOrder newMenuOrder = new MenuOrder();
         OrderInitializer initOrder = mapper.readValue(req.getInputStream(), OrderInitializer.class); // from JSON to Java Object (Order)
         System.out.println("--------doPost():: initOrder" + initOrder);
-        Customer customer = null;
+        Customer customer = new Customer();
         try{
             customer = customerServices.readById(String.valueOf(initOrder.getCustomer_username()));
             Menu menu = menuServices.readById(initOrder.getMenu_item());
@@ -130,7 +124,9 @@ public class MenuOrderServlet extends HttpServlet implements Authable {
         resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
-        if(!checkAuth(req, resp)) return;
+//       if(!checkAuth(req, resp)) return;
+
+        OrderInitializer initOrder = mapper.readValue(req.getInputStream(), OrderInitializer.class);
 
         MenuOrder menuOrderUpdate = mapper.readValue(req.getInputStream(), MenuOrder.class);
         MenuOrder updatedMenuOrder = menuOrderServices.update(menuOrderUpdate);
@@ -146,7 +142,7 @@ public class MenuOrderServlet extends HttpServlet implements Authable {
         resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
-        if(!checkAuth(req, resp)) return;
+    //   if(!checkAuth(req, resp)) return;
 
         if(req.getParameter("id") == null){
             resp.getWriter().write("In order to delete, please provide your the order id into the url with ?id=example-12");

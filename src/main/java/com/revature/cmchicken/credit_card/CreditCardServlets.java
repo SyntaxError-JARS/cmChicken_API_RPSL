@@ -82,7 +82,7 @@ public class CreditCardServlets extends HttpServlet {
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
         CreditCard newCreditCard = new CreditCard();
-        Customer customer =null;
+        Customer customer =new Customer();
 
         CreditCardInitializer initCreditCard = mapper.readValue(req.getInputStream(), CreditCardInitializer.class);
         try {
@@ -127,6 +127,8 @@ public class CreditCardServlets extends HttpServlet {
         resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
         //if(!checkAuth(req, resp)) return;
+
+
 
         CreditCard creditCardUpdate = mapper.readValue(req.getInputStream(), CreditCard.class);
         CreditCard updatedCreditCard = creditCardServices.update(creditCardUpdate);

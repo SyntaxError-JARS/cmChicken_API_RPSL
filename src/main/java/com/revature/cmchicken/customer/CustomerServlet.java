@@ -49,7 +49,7 @@ public class CustomerServlet extends HttpServlet implements Authable {
         resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
-        if(!checkAuth(req, resp)) return;
+//        if(!checkAuth(req, resp)) return;
         // The below code allows to split information from the endpoint after the /customers/. Reminder the first element is empty because it takes the value from before the first /
 //        String pathInfo = req.getPathInfo();
 //        String[] pathParts = pathInfo.split("/");
@@ -113,7 +113,7 @@ public class CustomerServlet extends HttpServlet implements Authable {
         resp.addHeader("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
         resp.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
-        if(!checkAuth(req, resp)) return;
+       // if(!checkAuth(req, resp)) return;
         Customer authCustomer = (Customer) req.getSession().getAttribute("authCustomer");
 
         Customer reqCustomer = mapper.readValue(req.getInputStream(), Customer.class);
@@ -147,12 +147,12 @@ public class CustomerServlet extends HttpServlet implements Authable {
 //        }
 
         String username = req.getParameter("username");
-        Customer authCustomer = (Customer) req.getSession().getAttribute("authCustomer");
-        System.out.println("doDelete()::username-----------------------" + username);
-        if(!authCustomer.getUsername().equals(username)){
-            resp.getWriter().write("password provided does not match the user name logged in, double check for confirmation of deletion");
-            return;
-        }
+//        Customer authCustomer = (Customer) req.getSession().getAttribute("authCustomer");
+//        System.out.println("doDelete()::username-----------------------" + username);
+//        if(!authCustomer.getUsername().equals(username)){
+//            resp.getWriter().write("password provided does not match the user name logged in, double check for confirmation of deletion");
+//            return;
+//        }
 
         try {
             customerService.delete(username);
