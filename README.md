@@ -1,8 +1,6 @@
 # cmChicken_API_RPSL
 This is project for CM Chicken.
 
-# **Project 1:** My Restaurant Application - **_DUE: 06/03/22_**
-
 ## Description
 
 My CM Chicken app was developed for a small restaurant that is looking to help streamline the ordering process for customers to help reduce costs. Customers can enjoy an seemless means to order directly with an account of their own at the restaurant in question, where Admins are capable of adding and updating the menu items. This RESTful application leverages a tomcat server to handle incoming requests to thoroughly tested services that must be persisted using Hibernate and Azure SQL services. This project includes a frontend that will be developed using ReactJS to handle user requests.
