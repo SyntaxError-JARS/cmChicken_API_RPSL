@@ -7,7 +7,7 @@ My CM Chicken app was developed for a small restaurant that is looking to help s
 
 ## ERD
 
-![](img/p1_erd.png)
+![](cmchicken.png)
 
 # User Stories
 
